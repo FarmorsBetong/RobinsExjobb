@@ -18,9 +18,17 @@
 		9468D0BB2677A915005CE95A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0BA2677A915005CE95A /* Preview Assets.xcassets */; };
 		9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E12677AAB9005CE95A /* PhoneConnection.swift */; };
 		9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */; };
-		9468D0EB2677AAB9005CE95A /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0E52677AAB9005CE95A /* Views */; };
 		9468D0FC2677AD75005CE95A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9468D0FB2677AD75005CE95A /* HealthKit.framework */; };
 		9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1032677B25E005CE95A /* NotificationCreator.swift */; };
+		9468D1292677B6EB005CE95A /* FibaroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1272677B6EB005CE95A /* FibaroView.swift */; };
+		9468D12A2677B6EB005CE95A /* PhilipHueToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1232677B6EB005CE95A /* PhilipHueToggleView.swift */; };
+		9468D12B2677B6EB005CE95A /* lamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1262677B6EB005CE95A /* lamp.swift */; };
+		9468D12C2677B6EB005CE95A /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1222677B6EB005CE95A /* HealthView.swift */; };
+		9468D12D2677B6EB005CE95A /* PhilipHueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1242677B6EB005CE95A /* PhilipHueView.swift */; };
+		9468D12E2677B6EB005CE95A /* ZWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1282677B6EB005CE95A /* ZWaveView.swift */; };
+		9468D12F2677B6EB005CE95A /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1202677B6EB005CE95A /* DoorView.swift */; };
+		9468D1302677B6EB005CE95A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1212677B6EB005CE95A /* ContentView.swift */; };
+		9468D1312677B6EB005CE95A /* toggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1252677B6EB005CE95A /* toggleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +89,18 @@
 		9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9468D0E12677AAB9005CE95A /* PhoneConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneConnection.swift; sourceTree = "<group>"; };
 		9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreWatch.swift; sourceTree = "<group>"; };
-		9468D0E52677AAB9005CE95A /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
 		9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RobinX0001E WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9468D0FB2677AD75005CE95A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		9468D1032677B25E005CE95A /* NotificationCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCreator.swift; sourceTree = "<group>"; };
+		9468D1202677B6EB005CE95A /* DoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
+		9468D1212677B6EB005CE95A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9468D1222677B6EB005CE95A /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		9468D1232677B6EB005CE95A /* PhilipHueToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilipHueToggleView.swift; sourceTree = "<group>"; };
+		9468D1242677B6EB005CE95A /* PhilipHueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilipHueView.swift; sourceTree = "<group>"; };
+		9468D1252677B6EB005CE95A /* toggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toggleView.swift; sourceTree = "<group>"; };
+		9468D1262677B6EB005CE95A /* lamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lamp.swift; sourceTree = "<group>"; };
+		9468D1272677B6EB005CE95A /* FibaroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibaroView.swift; sourceTree = "<group>"; };
+		9468D1282677B6EB005CE95A /* ZWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +147,11 @@
 		9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9468D13A2677B720005CE95A /* Views */,
 				9468D1032677B25E005CE95A /* NotificationCreator.swift */,
 				9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */,
 				9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */,
 				9468D0E12677AAB9005CE95A /* PhoneConnection.swift */,
-				9468D0E52677AAB9005CE95A /* Views */,
 				9468D0AD2677A914005CE95A /* RobinX0001EApp.swift */,
 				9468D0B12677A914005CE95A /* NotificationController.swift */,
 				9468D0B32677A914005CE95A /* NotificationView.swift */,
@@ -162,6 +178,22 @@
 				9468D0FB2677AD75005CE95A /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9468D13A2677B720005CE95A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9468D1212677B6EB005CE95A /* ContentView.swift */,
+				9468D1202677B6EB005CE95A /* DoorView.swift */,
+				9468D1272677B6EB005CE95A /* FibaroView.swift */,
+				9468D1222677B6EB005CE95A /* HealthView.swift */,
+				9468D1262677B6EB005CE95A /* lamp.swift */,
+				9468D1232677B6EB005CE95A /* PhilipHueToggleView.swift */,
+				9468D1242677B6EB005CE95A /* PhilipHueView.swift */,
+				9468D1252677B6EB005CE95A /* toggleView.swift */,
+				9468D1282677B6EB005CE95A /* ZWaveView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9468D0EB2677AAB9005CE95A /* Views in Resources */,
 				9468D0BB2677A915005CE95A /* Preview Assets.xcassets in Resources */,
 				9468D0B82677A915005CE95A /* Assets.xcassets in Resources */,
 			);
@@ -292,9 +323,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9468D0B22677A914005CE95A /* NotificationController.swift in Sources */,
+				9468D12D2677B6EB005CE95A /* PhilipHueView.swift in Sources */,
+				9468D12F2677B6EB005CE95A /* DoorView.swift in Sources */,
+				9468D12E2677B6EB005CE95A /* ZWaveView.swift in Sources */,
+				9468D12B2677B6EB005CE95A /* lamp.swift in Sources */,
+				9468D1292677B6EB005CE95A /* FibaroView.swift in Sources */,
 				9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */,
 				9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */,
+				9468D1312677B6EB005CE95A /* toggleView.swift in Sources */,
+				9468D12C2677B6EB005CE95A /* HealthView.swift in Sources */,
+				9468D12A2677B6EB005CE95A /* PhilipHueToggleView.swift in Sources */,
 				9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */,
+				9468D1302677B6EB005CE95A /* ContentView.swift in Sources */,
 				9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */,
 				9468D0AE2677A914005CE95A /* RobinX0001EApp.swift in Sources */,
 				9468D0B42677A914005CE95A /* NotificationView.swift in Sources */,
