@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9468D09D2677A90C005CE95A /* RobinX0001E WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9468D0A22677A914005CE95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0A12677A914005CE95A /* Assets.xcassets */; };
+		9468D0A92677A914005CE95A /* RobinX0001E WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9468D0A82677A914005CE95A /* RobinX0001E WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9468D0AE2677A914005CE95A /* RobinX0001EApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0AD2677A914005CE95A /* RobinX0001EApp.swift */; };
+		9468D0B22677A914005CE95A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0B12677A914005CE95A /* NotificationController.swift */; };
+		9468D0B42677A914005CE95A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0B32677A914005CE95A /* NotificationView.swift */; };
+		9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0B52677A914005CE95A /* ComplicationController.swift */; };
+		9468D0B82677A915005CE95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0B72677A915005CE95A /* Assets.xcassets */; };
+		9468D0BB2677A915005CE95A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0BA2677A915005CE95A /* Preview Assets.xcassets */; };
+		9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E12677AAB9005CE95A /* PhoneConnection.swift */; };
+		9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */; };
+		9468D0EB2677AAB9005CE95A /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0E52677AAB9005CE95A /* Views */; };
+		9468D0FC2677AD75005CE95A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9468D0FB2677AD75005CE95A /* HealthKit.framework */; };
+		9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1032677B25E005CE95A /* NotificationCreator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9468D09E2677A90C005CE95A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9468D0922677A90C005CE95A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9468D09B2677A90C005CE95A;
+			remoteInfo = "RobinX0001E WatchKit App";
+		};
+		9468D0AA2677A914005CE95A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9468D0922677A90C005CE95A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9468D0A72677A914005CE95A;
+			remoteInfo = "RobinX0001E WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9468D0C32677A915005CE95A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9468D0A92677A914005CE95A /* RobinX0001E WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9468D0C72677A915005CE95A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9468D09D2677A90C005CE95A /* RobinX0001E WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9468D0982677A90C005CE95A /* RobinX0001E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobinX0001E.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RobinX0001E WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9468D0A12677A914005CE95A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9468D0A32677A914005CE95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9468D0A82677A914005CE95A /* RobinX0001E WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RobinX0001E WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9468D0AD2677A914005CE95A /* RobinX0001EApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobinX0001EApp.swift; sourceTree = "<group>"; };
+		9468D0B12677A914005CE95A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9468D0B32677A914005CE95A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		9468D0B52677A914005CE95A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9468D0B72677A915005CE95A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9468D0BA2677A915005CE95A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9468D0BC2677A915005CE95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		9468D0E12677AAB9005CE95A /* PhoneConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneConnection.swift; sourceTree = "<group>"; };
+		9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreWatch.swift; sourceTree = "<group>"; };
+		9468D0E52677AAB9005CE95A /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RobinX0001E WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		9468D0FB2677AD75005CE95A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		9468D1032677B25E005CE95A /* NotificationCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCreator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9468D0A52677A914005CE95A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9468D0FC2677AD75005CE95A /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9468D0912677A90C005CE95A = {
+			isa = PBXGroup;
+			children = (
+				9468D0A02677A90C005CE95A /* RobinX0001E WatchKit App */,
+				9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */,
+				9468D0992677A90C005CE95A /* Products */,
+				9468D0FA2677AD75005CE95A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9468D0992677A90C005CE95A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9468D0982677A90C005CE95A /* RobinX0001E.app */,
+				9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */,
+				9468D0A82677A914005CE95A /* RobinX0001E WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9468D0A02677A90C005CE95A /* RobinX0001E WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				9468D0A12677A914005CE95A /* Assets.xcassets */,
+				9468D0A32677A914005CE95A /* Info.plist */,
+			);
+			path = "RobinX0001E WatchKit App";
+			sourceTree = "<group>";
+		};
+		9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9468D1032677B25E005CE95A /* NotificationCreator.swift */,
+				9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */,
+				9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */,
+				9468D0E12677AAB9005CE95A /* PhoneConnection.swift */,
+				9468D0E52677AAB9005CE95A /* Views */,
+				9468D0AD2677A914005CE95A /* RobinX0001EApp.swift */,
+				9468D0B12677A914005CE95A /* NotificationController.swift */,
+				9468D0B32677A914005CE95A /* NotificationView.swift */,
+				9468D0B52677A914005CE95A /* ComplicationController.swift */,
+				9468D0B72677A915005CE95A /* Assets.xcassets */,
+				9468D0BC2677A915005CE95A /* Info.plist */,
+				9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */,
+				9468D0B92677A915005CE95A /* Preview Content */,
+			);
+			path = "RobinX0001E WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9468D0B92677A915005CE95A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9468D0BA2677A915005CE95A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9468D0FA2677AD75005CE95A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9468D0FB2677AD75005CE95A /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9468D0972677A90C005CE95A /* RobinX0001E */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9468D0C82677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E" */;
+			buildPhases = (
+				9468D0962677A90C005CE95A /* Resources */,
+				9468D0C72677A915005CE95A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9468D09F2677A90C005CE95A /* PBXTargetDependency */,
+			);
+			name = RobinX0001E;
+			productName = RobinX0001E;
+			productReference = 9468D0982677A90C005CE95A /* RobinX0001E.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		9468D09B2677A90C005CE95A /* RobinX0001E WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9468D0C42677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E WatchKit App" */;
+			buildPhases = (
+				9468D09A2677A90C005CE95A /* Resources */,
+				9468D0C32677A915005CE95A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9468D0AB2677A914005CE95A /* PBXTargetDependency */,
+			);
+			name = "RobinX0001E WatchKit App";
+			productName = "RobinX0001E WatchKit App";
+			productReference = 9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9468D0A72677A914005CE95A /* RobinX0001E WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9468D0C02677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E WatchKit Extension" */;
+			buildPhases = (
+				9468D0A42677A914005CE95A /* Sources */,
+				9468D0A52677A914005CE95A /* Frameworks */,
+				9468D0A62677A914005CE95A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RobinX0001E WatchKit Extension";
+			productName = "RobinX0001E WatchKit Extension";
+			productReference = 9468D0A82677A914005CE95A /* RobinX0001E WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9468D0922677A90C005CE95A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					9468D0972677A90C005CE95A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					9468D09B2677A90C005CE95A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					9468D0A72677A914005CE95A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 9468D0952677A90C005CE95A /* Build configuration list for PBXProject "RobinX0001E" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9468D0912677A90C005CE95A;
+			productRefGroup = 9468D0992677A90C005CE95A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9468D0972677A90C005CE95A /* RobinX0001E */,
+				9468D09B2677A90C005CE95A /* RobinX0001E WatchKit App */,
+				9468D0A72677A914005CE95A /* RobinX0001E WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9468D0962677A90C005CE95A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9468D09A2677A90C005CE95A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9468D0A22677A914005CE95A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9468D0A62677A914005CE95A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9468D0EB2677AAB9005CE95A /* Views in Resources */,
+				9468D0BB2677A915005CE95A /* Preview Assets.xcassets in Resources */,
+				9468D0B82677A915005CE95A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9468D0A42677A914005CE95A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9468D0B22677A914005CE95A /* NotificationController.swift in Sources */,
+				9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */,
+				9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */,
+				9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */,
+				9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */,
+				9468D0AE2677A914005CE95A /* RobinX0001EApp.swift in Sources */,
+				9468D0B42677A914005CE95A /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9468D09F2677A90C005CE95A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9468D09B2677A90C005CE95A /* RobinX0001E WatchKit App */;
+			targetProxy = 9468D09E2677A90C005CE95A /* PBXContainerItemProxy */;
+		};
+		9468D0AB2677A914005CE95A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9468D0A72677A914005CE95A /* RobinX0001E WatchKit Extension */;
+			targetProxy = 9468D0AA2677A914005CE95A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9468D0BE2677A915005CE95A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9468D0BF2677A915005CE95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9468D0C12677A915005CE95A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "RobinX0001E WatchKit Extension/RobinX0001E WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RobinX0001E WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RobinX0001E WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		9468D0C22677A915005CE95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "RobinX0001E WatchKit Extension/RobinX0001E WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RobinX0001E WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RobinX0001E WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		9468D0C52677A915005CE95A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = RobinX0001E_WatchKit_Extension;
+				INFOPLIST_FILE = "RobinX0001E WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		9468D0C62677A915005CE95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = RobinX0001E_WatchKit_Extension;
+				INFOPLIST_FILE = "RobinX0001E WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		9468D0C92677A915005CE95A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9468D0CA2677A915005CE95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.RobinX0001E;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9468D0952677A90C005CE95A /* Build configuration list for PBXProject "RobinX0001E" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9468D0BE2677A915005CE95A /* Debug */,
+				9468D0BF2677A915005CE95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9468D0C02677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9468D0C12677A915005CE95A /* Debug */,
+				9468D0C22677A915005CE95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9468D0C42677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9468D0C52677A915005CE95A /* Debug */,
+				9468D0C62677A915005CE95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9468D0C82677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9468D0C92677A915005CE95A /* Debug */,
+				9468D0CA2677A915005CE95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9468D0922677A90C005CE95A /* Project object */;
+}
