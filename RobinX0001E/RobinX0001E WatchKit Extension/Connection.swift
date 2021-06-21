@@ -10,32 +10,42 @@ import WatchConnectivity
 
 
 
-class PhoneConnection : NSObject, WCSessionDelegate, ObservableObject, Identifiable{
+class Connection : NSObject, WCSessionDelegate, ObservableObject, Identifiable, FibaroObserver{
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        //
+    }
+    
     
     private var notCreator : NotificationCreator!
     var session : WCSession!
-    
+    var fibaro : Fibaro?
+    var WC : WatchConnection?
     var philipHueLights : HueContainer
     var fibBS : FibContainer
     var fibCSDoor : FibContainerDoor
     
+    
     init(notification : NotificationCreator){
         //self.outletDoorList = [Dictionary<String, Any>]()
 
-        //self.outletList = [Dictionary<String, Any>]()
+       // self.outletList = [Dictionary<String, Any>]()
         self.philipHueLights = HueContainer()
         self.fibBS = FibContainer()
         self.fibCSDoor = FibContainerDoor()
+        self.fibaro = Fibaro("unicorn@ltu.se", "jSCN47bC", "130.240.114.44")
         super.init()
-        if WCSession.isSupported(){
-            self.session = WCSession.default
-            self.session.delegate = self
-            self.session.activate()
-            self.notCreator = notification
-        }
+        
+        self.WC = WatchConnection(fib : fibaro!)
+        
+        
        
         
+        guard let fibaro = fibaro else { return }
+        
+        fibaro.registerObserver(obs: self)
     }
+    
+    
     //Used for sending notifications recieved from phone.
     func sendLocalNotification(_ title: String = "Grp8Application",_ subtitle: String = "Warning", body: String){
         if let notificationCreater = self.notCreator{
@@ -77,7 +87,8 @@ class PhoneConnection : NSObject, WCSessionDelegate, ObservableObject, Identifia
                 }
             }
                 //<!--------------------- PHILIP HUE -------------------!>//
-            if let hueReq = message["HUE"]{
+            if let hueReq = message["HUE"]
+            {
                 if let notification = message["NOTIFICATION"]{
                     //Inte satt ngn notification trigger för phue, 10:e mars.
                     print("HUE recieved")
@@ -103,23 +114,43 @@ class PhoneConnection : NSObject, WCSessionDelegate, ObservableObject, Identifia
             }
         }
     }
-
-
-    func send(msg : [String : Any]){
-        if !(session.isReachable){
-            return
+    
+    internal func fibNotification(_ msg :[String : Any]){
+        
+        print("Fib response inside con class, recieved with the msg:")
+        for(key,value) in msg{
+            print("Key: \(key), value: \(value)")
         }
-        for (key,value) in msg{
+        
+        DispatchQueue.main.async{
+            //self.send(message: msg)
+            print("Recieved msg from Fib in Connection")
+            self.fibBS.recieveFibSwitches(switches: msg["BODY"] as! [Dictionary <String, Any>])
+            //self.con!.fibBS.recieveFibSwitches(switches: msg["BODY"] as! [Dictionary<String, Any>])
+        }
+        
+    }
+
+    
+    //used to send msg to phone
+    func send(msg : [String : Any]){
+        print("send msg func is being executed")
+        for (key,value) in msg
+        {
             print("SENDING KEY: \(key) Value: \(value)")
         }
+        
+        fibaro!.recMsgFromWatch(code : msg["CODE"] as! Int)
+        //used to send the msg to the phone
+        /*
         session.sendMessage(msg, replyHandler: nil, errorHandler: {
             error in
             print(error.localizedDescription)
-        })
+        })*/
 
     }
     //To be implemented.
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    //func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     /*
     public func getOutletFlag() -> Bool{
         return outlletFlag

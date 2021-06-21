@@ -11,10 +11,10 @@ struct PhilipHueToggleView: View {
     
     @State var isClicked: Bool
     private var lightId : String
-    private var WMC : PhoneConnection
+    private var WMC : Connection
     private var firstClick : prepLoad
     
-    init(WMC : PhoneConnection, id : String, onOff : Int){
+    init(WMC : Connection, id : String, onOff : Int){
         self.lightId = id
         self.WMC = WMC
         self.firstClick = prepLoad()

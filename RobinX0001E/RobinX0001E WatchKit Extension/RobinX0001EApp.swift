@@ -13,19 +13,19 @@ struct RobinX0001EApp: App {
     
     @Environment(\.scenePhase) var phase
     
-    var phoneCon: PhoneConnection?
+    var connection: Connection?
     var healthStore: HealthStoreWatch?
     var notification = NotificationCreator()
     
     init() {
         self.healthStore = HealthStoreWatch()
-        self.phoneCon = PhoneConnection(notification: notification)
+        self.connection = Connection(notification: notification)
     }
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(healthStore: healthStore!, phoneCon: phoneCon!).onAppear(){
+                ContentView(healthStore: healthStore!, connection: connection!).onAppear(){
                     print("View did load, requesting access to notifications:")
                     notification.RequestNotificationAuthorization()
                 }
@@ -33,7 +33,7 @@ struct RobinX0001EApp: App {
                 switch newPhase{
                 case .active:
                     print("App is active")
-                    healthStore!.startWokrout()
+                    //healthStore!.startWorkout()
                 case .inactive:
                     print("App is now inactive")
                     //healthStore!.recoverFromCrash()

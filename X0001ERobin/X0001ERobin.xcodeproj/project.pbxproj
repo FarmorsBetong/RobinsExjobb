@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		945BE4BB267E0CE3003E41EE /* X0001ERobinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4BA267E0CE3003E41EE /* X0001ERobinApp.swift */; };
+		945BE4BD267E0CE3003E41EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4BC267E0CE3003E41EE /* ContentView.swift */; };
+		945BE4BF267E0CE4003E41EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4BE267E0CE4003E41EE /* Assets.xcassets */; };
+		945BE4C2267E0CE4003E41EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4C1267E0CE4003E41EE /* Preview Assets.xcassets */; };
+		945BE4C8267E0CE4003E41EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4C7267E0CE4003E41EE /* Assets.xcassets */; };
+		945BE4D0267E0CE5003E41EE /* X0001ERobinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4CF267E0CE5003E41EE /* X0001ERobinApp.swift */; };
+		945BE4D2267E0CE5003E41EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4D1267E0CE5003E41EE /* ContentView.swift */; };
+		945BE4D4267E0CE5003E41EE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4D3267E0CE5003E41EE /* NotificationController.swift */; };
+		945BE4D6267E0CE5003E41EE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4D5267E0CE5003E41EE /* NotificationView.swift */; };
+		945BE4D8267E0CE5003E41EE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4D7267E0CE5003E41EE /* ComplicationController.swift */; };
+		945BE4DA267E0CE5003E41EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4D9267E0CE5003E41EE /* Assets.xcassets */; };
+		945BE4DD267E0CE5003E41EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4DC267E0CE5003E41EE /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		945BE4B7267E0CE3003E41EE /* X0001ERobin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X0001ERobin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		945BE4BA267E0CE3003E41EE /* X0001ERobinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X0001ERobinApp.swift; sourceTree = "<group>"; };
+		945BE4BC267E0CE3003E41EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		945BE4BE267E0CE4003E41EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		945BE4C1267E0CE4003E41EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		945BE4C3267E0CE4003E41EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945BE4C7267E0CE4003E41EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		945BE4C9267E0CE4003E41EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945BE4CF267E0CE5003E41EE /* X0001ERobinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X0001ERobinApp.swift; sourceTree = "<group>"; };
+		945BE4D1267E0CE5003E41EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		945BE4D3267E0CE5003E41EE /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		945BE4D5267E0CE5003E41EE /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		945BE4D7267E0CE5003E41EE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		945BE4D9267E0CE5003E41EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		945BE4DC267E0CE5003E41EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		945BE4DE267E0CE5003E41EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945BE4DF267E0CE5003E41EE /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		945BE4B4267E0CE3003E41EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE4CB267E0CE5003E41EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		945BE4AE267E0CE3003E41EE = {
+			isa = PBXGroup;
+			children = (
+				945BE4B9267E0CE3003E41EE /* X0001ERobin */,
+				945BE4C6267E0CE4003E41EE /* X0001ERobin WatchKit App */,
+				945BE4CE267E0CE5003E41EE /* X0001ERobin WatchKit Extension */,
+				945BE4B8267E0CE3003E41EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		945BE4B8267E0CE3003E41EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4B7267E0CE3003E41EE /* X0001ERobin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		945BE4B9267E0CE3003E41EE /* X0001ERobin */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4BA267E0CE3003E41EE /* X0001ERobinApp.swift */,
+				945BE4BC267E0CE3003E41EE /* ContentView.swift */,
+				945BE4BE267E0CE4003E41EE /* Assets.xcassets */,
+				945BE4C3267E0CE4003E41EE /* Info.plist */,
+				945BE4C0267E0CE4003E41EE /* Preview Content */,
+			);
+			path = X0001ERobin;
+			sourceTree = "<group>";
+		};
+		945BE4C0267E0CE4003E41EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4C1267E0CE4003E41EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		945BE4C6267E0CE4003E41EE /* X0001ERobin WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4C7267E0CE4003E41EE /* Assets.xcassets */,
+				945BE4C9267E0CE4003E41EE /* Info.plist */,
+			);
+			path = "X0001ERobin WatchKit App";
+			sourceTree = "<group>";
+		};
+		945BE4CE267E0CE5003E41EE /* X0001ERobin WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4CF267E0CE5003E41EE /* X0001ERobinApp.swift */,
+				945BE4D1267E0CE5003E41EE /* ContentView.swift */,
+				945BE4D3267E0CE5003E41EE /* NotificationController.swift */,
+				945BE4D5267E0CE5003E41EE /* NotificationView.swift */,
+				945BE4D7267E0CE5003E41EE /* ComplicationController.swift */,
+				945BE4D9267E0CE5003E41EE /* Assets.xcassets */,
+				945BE4DE267E0CE5003E41EE /* Info.plist */,
+				945BE4DF267E0CE5003E41EE /* PushNotificationPayload.apns */,
+				945BE4DB267E0CE5003E41EE /* Preview Content */,
+			);
+			path = "X0001ERobin WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		945BE4DB267E0CE5003E41EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				945BE4DC267E0CE5003E41EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		945BE4B6267E0CE3003E41EE /* X0001ERobin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE4E2267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin" */;
+			buildPhases = (
+				945BE4B3267E0CE3003E41EE /* Sources */,
+				945BE4B4267E0CE3003E41EE /* Frameworks */,
+				945BE4B5267E0CE3003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = X0001ERobin;
+			productName = X0001ERobin;
+			productReference = 945BE4B7267E0CE3003E41EE /* X0001ERobin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		945BE4C5267E0CE4003E41EE /* X0001ERobin WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE4E5267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit App" */;
+			buildPhases = (
+				945BE4C4267E0CE4003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "X0001ERobin WatchKit App";
+			productName = "X0001ERobin WatchKit App";
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		945BE4CD267E0CE5003E41EE /* X0001ERobin WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE4E8267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit Extension" */;
+			buildPhases = (
+				945BE4CA267E0CE5003E41EE /* Sources */,
+				945BE4CB267E0CE5003E41EE /* Frameworks */,
+				945BE4CC267E0CE5003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "X0001ERobin WatchKit Extension";
+			productName = "X0001ERobin WatchKit Extension";
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		945BE4AF267E0CE3003E41EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					945BE4B6267E0CE3003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					945BE4C5267E0CE4003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					945BE4CD267E0CE5003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 945BE4B2267E0CE3003E41EE /* Build configuration list for PBXProject "X0001ERobin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 945BE4AE267E0CE3003E41EE;
+			productRefGroup = 945BE4B8267E0CE3003E41EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				945BE4B6267E0CE3003E41EE /* X0001ERobin */,
+				945BE4C5267E0CE4003E41EE /* X0001ERobin WatchKit App */,
+				945BE4CD267E0CE5003E41EE /* X0001ERobin WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		945BE4B5267E0CE3003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945BE4C2267E0CE4003E41EE /* Preview Assets.xcassets in Resources */,
+				945BE4BF267E0CE4003E41EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE4C4267E0CE4003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945BE4C8267E0CE4003E41EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE4CC267E0CE5003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945BE4DD267E0CE5003E41EE /* Preview Assets.xcassets in Resources */,
+				945BE4DA267E0CE5003E41EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		945BE4B3267E0CE3003E41EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945BE4BD267E0CE3003E41EE /* ContentView.swift in Sources */,
+				945BE4BB267E0CE3003E41EE /* X0001ERobinApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE4CA267E0CE5003E41EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945BE4D4267E0CE5003E41EE /* NotificationController.swift in Sources */,
+				945BE4D2267E0CE5003E41EE /* ContentView.swift in Sources */,
+				945BE4D8267E0CE5003E41EE /* ComplicationController.swift in Sources */,
+				945BE4D0267E0CE5003E41EE /* X0001ERobinApp.swift in Sources */,
+				945BE4D6267E0CE5003E41EE /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		945BE4E0267E0CE5003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		945BE4E1267E0CE5003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		945BE4E3267E0CE5003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = X0001ERobin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		945BE4E4267E0CE5003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = X0001ERobin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		945BE4E6267E0CE5003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = X0001ERobin_WatchKit_Extension;
+				INFOPLIST_FILE = "X0001ERobin WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		945BE4E7267E0CE5003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = X0001ERobin_WatchKit_Extension;
+				INFOPLIST_FILE = "X0001ERobin WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		945BE4E9267E0CE5003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "X0001ERobin WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		945BE4EA267E0CE5003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "X0001ERobin WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.X0001ERobin.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		945BE4B2267E0CE3003E41EE /* Build configuration list for PBXProject "X0001ERobin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE4E0267E0CE5003E41EE /* Debug */,
+				945BE4E1267E0CE5003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945BE4E2267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE4E3267E0CE5003E41EE /* Debug */,
+				945BE4E4267E0CE5003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945BE4E5267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE4E6267E0CE5003E41EE /* Debug */,
+				945BE4E7267E0CE5003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945BE4E8267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE4E9267E0CE5003E41EE /* Debug */,
+				945BE4EA267E0CE5003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 945BE4AF267E0CE3003E41EE /* Project object */;
+}

@@ -13,12 +13,12 @@ struct ToggleView : View {
     @State var isChecked: Bool
     private var firstClick : prepLoad
    
-    var phoneCon: PhoneConnection?
+    var connection: Connection?
     let name: String?
     let id : Int?
     
-    init(phoneCon : PhoneConnection, name : String, id : Int, status : Bool){
-        self.phoneCon = phoneCon
+    init(connection : Connection, name : String, id : Int, status : Bool){
+        self.connection = connection
         self.name = name
         self.id = id
         self.firstClick = prepLoad()
@@ -76,14 +76,14 @@ struct ToggleView : View {
     
     func sendMsgToPhone(onOff : Int, node : Int){
         
-        guard let phoneCon = phoneCon else {return}
+        guard let connection = connection else {return}
         
         var dic = [String : Any]()
         dic["FIBARO"] = true
         dic["CODE"] = onOff
         dic["NODE"] = node
         
-        phoneCon.send(msg: dic)
+        connection.send(msg: dic)
         print("protocol FIBARO msg was created and sent")
     }
 }

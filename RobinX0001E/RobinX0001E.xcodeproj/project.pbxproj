@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9415B07B267E559C0057CD78 /* WatchConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415B07A267E559C0057CD78 /* WatchConnection.swift */; };
+		945BE46A26790833003E41EE /* HomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE46726790833003E41EE /* HomeKit.swift */; };
+		945BE46C26790833003E41EE /* PhilipHueClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE46926790833003E41EE /* PhilipHueClient.swift */; };
+		945BE47726790ACB003E41EE /* MQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE47626790ACB003E41EE /* MQTTClient.swift */; };
 		9468D09D2677A90C005CE95A /* RobinX0001E WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9468D0A22677A914005CE95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0A12677A914005CE95A /* Assets.xcassets */; };
 		9468D0A92677A914005CE95A /* RobinX0001E WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9468D0A82677A914005CE95A /* RobinX0001E WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -16,7 +20,7 @@
 		9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0B52677A914005CE95A /* ComplicationController.swift */; };
 		9468D0B82677A915005CE95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0B72677A915005CE95A /* Assets.xcassets */; };
 		9468D0BB2677A915005CE95A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9468D0BA2677A915005CE95A /* Preview Assets.xcassets */; };
-		9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E12677AAB9005CE95A /* PhoneConnection.swift */; };
+		9468D0E72677AAB9005CE95A /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E12677AAB9005CE95A /* Connection.swift */; };
 		9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */; };
 		9468D0FC2677AD75005CE95A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9468D0FB2677AD75005CE95A /* HealthKit.framework */; };
 		9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1032677B25E005CE95A /* NotificationCreator.swift */; };
@@ -74,6 +78,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9415B07A267E559C0057CD78 /* WatchConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnection.swift; sourceTree = "<group>"; };
+		945BE46726790833003E41EE /* HomeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKit.swift; sourceTree = "<group>"; };
+		945BE46926790833003E41EE /* PhilipHueClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueClient.swift; sourceTree = "<group>"; };
+		945BE47626790ACB003E41EE /* MQTTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTClient.swift; sourceTree = "<group>"; };
 		9468D0982677A90C005CE95A /* RobinX0001E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobinX0001E.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9468D09C2677A90C005CE95A /* RobinX0001E WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RobinX0001E WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9468D0A12677A914005CE95A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +95,7 @@
 		9468D0BA2677A915005CE95A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9468D0BC2677A915005CE95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		9468D0E12677AAB9005CE95A /* PhoneConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneConnection.swift; sourceTree = "<group>"; };
+		9468D0E12677AAB9005CE95A /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreWatch.swift; sourceTree = "<group>"; };
 		9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RobinX0001E WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9468D0FB2677AD75005CE95A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -104,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		945BE48426791959003E41EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9468D0A52677A914005CE95A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +130,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		945BE46126790795003E41EE /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				9415B07A267E559C0057CD78 /* WatchConnection.swift */,
+				945BE47626790ACB003E41EE /* MQTTClient.swift */,
+				945BE46726790833003E41EE /* HomeKit.swift */,
+				945BE46926790833003E41EE /* PhilipHueClient.swift */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
 		9468D0912677A90C005CE95A = {
 			isa = PBXGroup;
 			children = (
@@ -147,11 +173,12 @@
 		9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				945BE46126790795003E41EE /* Communication */,
 				9468D13A2677B720005CE95A /* Views */,
 				9468D1032677B25E005CE95A /* NotificationCreator.swift */,
 				9468D0F92677AD75005CE95A /* RobinX0001E WatchKit Extension.entitlements */,
 				9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */,
-				9468D0E12677AAB9005CE95A /* PhoneConnection.swift */,
+				9468D0E12677AAB9005CE95A /* Connection.swift */,
 				9468D0AD2677A914005CE95A /* RobinX0001EApp.swift */,
 				9468D0B12677A914005CE95A /* NotificationController.swift */,
 				9468D0B32677A914005CE95A /* NotificationView.swift */,
@@ -199,6 +226,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		945BE47C26791958003E41EE /* Applewatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE49F2679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch" */;
+			buildPhases = (
+				945BE47B26791958003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Applewatch;
+			productName = Applewatch;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		945BE47E26791958003E41EE /* Applewatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE4A02679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch WatchKit App" */;
+			buildPhases = (
+				945BE47D26791958003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Applewatch WatchKit App";
+			productName = "Applewatch WatchKit App";
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		945BE48626791959003E41EE /* Applewatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945BE4A12679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch WatchKit Extension" */;
+			buildPhases = (
+				945BE48326791959003E41EE /* Sources */,
+				945BE48426791959003E41EE /* Frameworks */,
+				945BE48526791959003E41EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Applewatch WatchKit Extension";
+			productName = "Applewatch WatchKit Extension";
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		9468D0972677A90C005CE95A /* RobinX0001E */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9468D0C82677A915005CE95A /* Build configuration list for PBXNativeTarget "RobinX0001E" */;
@@ -259,6 +330,15 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					945BE47C26791958003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					945BE47E26791958003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					945BE48626791959003E41EE = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					9468D0972677A90C005CE95A = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -286,11 +366,35 @@
 				9468D0972677A90C005CE95A /* RobinX0001E */,
 				9468D09B2677A90C005CE95A /* RobinX0001E WatchKit App */,
 				9468D0A72677A914005CE95A /* RobinX0001E WatchKit Extension */,
+				945BE47C26791958003E41EE /* Applewatch */,
+				945BE47E26791958003E41EE /* Applewatch WatchKit App */,
+				945BE48626791959003E41EE /* Applewatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		945BE47B26791958003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE47D26791958003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945BE48526791959003E41EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9468D0962677A90C005CE95A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +422,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		945BE48326791959003E41EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9468D0A42677A914005CE95A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,9 +439,12 @@
 				9468D12E2677B6EB005CE95A /* ZWaveView.swift in Sources */,
 				9468D12B2677B6EB005CE95A /* lamp.swift in Sources */,
 				9468D1292677B6EB005CE95A /* FibaroView.swift in Sources */,
+				945BE46C26790833003E41EE /* PhilipHueClient.swift in Sources */,
 				9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */,
-				9468D0E72677AAB9005CE95A /* PhoneConnection.swift in Sources */,
+				9468D0E72677AAB9005CE95A /* Connection.swift in Sources */,
+				945BE46A26790833003E41EE /* HomeKit.swift in Sources */,
 				9468D1312677B6EB005CE95A /* toggleView.swift in Sources */,
+				9415B07B267E559C0057CD78 /* WatchConnection.swift in Sources */,
 				9468D12C2677B6EB005CE95A /* HealthView.swift in Sources */,
 				9468D12A2677B6EB005CE95A /* PhilipHueToggleView.swift in Sources */,
 				9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */,
@@ -338,6 +452,7 @@
 				9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */,
 				9468D0AE2677A914005CE95A /* RobinX0001EApp.swift in Sources */,
 				9468D0B42677A914005CE95A /* NotificationView.swift in Sources */,
+				945BE47726790ACB003E41EE /* MQTTClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +472,122 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		945BE4992679195A003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		945BE49A2679195A003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		945BE49B2679195A003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = Applewatch_WatchKit_Extension;
+				INFOPLIST_FILE = "Applewatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		945BE49C2679195A003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = Applewatch_WatchKit_Extension;
+				INFOPLIST_FILE = "Applewatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		945BE49D2679195A003E41EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Applewatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/RobinX0001E WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		945BE49E2679195A003E41EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Applewatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/RobinX0001E WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupp8.Applewatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		9468D0BE2677A915005CE95A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,6 +821,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		945BE49F2679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE4992679195A003E41EE /* Debug */,
+				945BE49A2679195A003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945BE4A02679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE49B2679195A003E41EE /* Debug */,
+				945BE49C2679195A003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945BE4A12679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945BE49D2679195A003E41EE /* Debug */,
+				945BE49E2679195A003E41EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9468D0952677A90C005CE95A /* Build configuration list for PBXProject "RobinX0001E" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

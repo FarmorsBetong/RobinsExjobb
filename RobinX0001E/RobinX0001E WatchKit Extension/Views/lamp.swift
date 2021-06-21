@@ -10,12 +10,12 @@ import SwiftUI
 struct lamp: View {
     
     // connection reference
-    var phoneCon: PhoneConnection
+    var connection: Connection
     @ObservedObject var fibCont: FibContainer
     
-    init(phoneCon : PhoneConnection){
-        self.phoneCon = phoneCon
-        self.fibCont = phoneCon.fibBS
+    init(connection : Connection){
+        self.connection = connection
+        self.fibCont = connection.fibBS
     }
     
     var body: some View {
@@ -29,7 +29,7 @@ struct lamp: View {
                     ForEach(0..<list.count, id: \.self){ index in
                             let dic = list[index] as! NSDictionary
             
-                            ToggleView(phoneCon: self.phoneCon, name: dic.value(forKey: "name") as! String, id: dic.value(forKey: "nodeID") as! Int, status: dic.value(forKey: "value") as! Bool)
+                            ToggleView(connection: self.connection, name: dic.value(forKey: "name") as! String, id: dic.value(forKey: "nodeID") as! Int, status: dic.value(forKey: "value") as! Bool)
                     }
                     
                     
@@ -54,7 +54,7 @@ struct lamp: View {
         msg["FIBARO"] = true
         msg["GET"] = true
         msg["CODE"] = code
-        phoneCon.send(msg: msg)
+        connection.send(msg: msg)
         print("protocol FIBARO msg was created and sent")
     }
     

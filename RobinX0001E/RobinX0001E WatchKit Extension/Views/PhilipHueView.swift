@@ -10,11 +10,11 @@ import SwiftUI
 struct PhilipHueView: View {
     
     @ObservedObject var lights : HueContainer
-    var WMC : PhoneConnection
+    var WMC : Connection
     
     //On exit, set false state.
     
-    init(phoneCon : PhoneConnection){
+    init(phoneCon : Connection){
         print("AADADADADADAD \n\n\n\n")
         self.WMC = phoneCon
         self.lights = WMC.getHueContainer()

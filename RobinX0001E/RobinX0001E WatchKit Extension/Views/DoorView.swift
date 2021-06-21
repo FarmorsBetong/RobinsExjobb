@@ -11,12 +11,12 @@ struct DoorView: View {
     
     
     // connection reference
-    var phoneCon: PhoneConnection
+    var connection: Connection
     @ObservedObject var fibCont: FibContainerDoor
     
-    init(phoneCon : PhoneConnection){
-        self.phoneCon = phoneCon
-        self.fibCont = phoneCon.fibCSDoor
+    init(connection : Connection){
+        self.connection = connection
+        self.fibCont = connection.fibCSDoor
     }
     
     var body: some View {
@@ -53,7 +53,7 @@ struct DoorView: View {
         msg["FIBARO"] = true
         msg["GET"] = true
         msg["CODE"] = code
-        phoneCon.send(msg: msg)
+        connection.send(msg: msg)
         print("protocol FIBARO msg was created and sent")
     }
 }

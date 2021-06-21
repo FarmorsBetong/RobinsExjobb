@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-class HealthStoreWatch:  NSObject ,HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate {
+class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate {
     
     
     
@@ -80,7 +80,8 @@ class HealthStoreWatch:  NSObject ,HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             }
     }
     
-    func startWokrout() {
+    func startWorkout()
+    {
         guard let session = session else { return }
         guard let builder = builder else { return }
         print("\n\n\n\n\n\n\n start workout method")

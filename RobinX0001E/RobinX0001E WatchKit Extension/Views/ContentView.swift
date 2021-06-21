@@ -11,19 +11,19 @@ import HealthKit
 
 
 struct ContentView: View {
-    var phoneCon: PhoneConnection?
+    var connection: Connection?
     var store: HealthStoreWatch?
     
-    init(healthStore : HealthStoreWatch, phoneCon : PhoneConnection) {
+    init(healthStore : HealthStoreWatch, connection : Connection) {
         self.store = healthStore
-        self.phoneCon = phoneCon
+        self.connection = connection
         //Move to init.
         store!.requestAuthorization(){ success in
             if success {
                 print("Authorazation was sucessfully completed")
             }
         }
-        store!.startWokrout()
+        store!.startWorkout()
     }
     
     var body: some View {
@@ -41,18 +41,17 @@ struct ContentView: View {
             })
                 
             NavigationLink(
-                destination: FibaroView(phoneCon: self.phoneCon!),
+                destination: FibaroView(connection: self.connection!),
                 label: {
                     Text("Fibaro")
                     Image(systemName: "house")
             })
             
             NavigationLink(
-                destination: PhilipHueView(phoneCon: self.phoneCon!).onAppear(){
-                    print("Jag är i onappear \n")
-                    self.phoneCon!.send(msg: ["HUE":true,"GET":true ,"CODE":0]) //Call to fetch data for view.
+                destination: PhilipHueView(phoneCon: self.connection!).onAppear(){
+                    self.connection!.send(msg: ["HUE":true,"GET":true ,"CODE":0]) //Call to fetch data for view.
                 }.onDisappear(){
-                    phoneCon!.getHueContainer().resetStatus()
+                    connection!.getHueContainer().resetStatus()
                     print("Reset HUE ")
                 },
                 label: {

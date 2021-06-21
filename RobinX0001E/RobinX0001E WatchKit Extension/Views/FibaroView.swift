@@ -11,10 +11,10 @@ import SwiftUI
 struct FibaroView: View {
     
     @State var bol = true
-    var phoneCon : PhoneConnection?
+    var connection : Connection?
     
-    init(phoneCon: PhoneConnection){
-        self.phoneCon = phoneCon
+    init(connection: Connection){
+        self.connection = connection
         
     }
     
@@ -24,24 +24,24 @@ struct FibaroView: View {
                 HStack{
                     
                     NavigationLink(
-                        destination: lamp(phoneCon: self.phoneCon!).onAppear(){
-                            self.phoneCon!.send(msg: ["FIBARO":true,"GET":true ,"CODE":0]) //Call to fetch data for view.
-                            print("protocol FIBARO msg was created and sent")
+                        destination: lamp(connection: self.connection!).onAppear(){
+                            self.connection!.send(msg: ["FIBARO":true,"GET":true ,"CODE":0]) //Call to fetch data for view.
+                            //print("protocol FIBARO msg was created and sent")
                         }.onDisappear(){
                             print("Reset Fibaro outlets")
-                            self.phoneCon!.getFibContainer().resetStatus()
+                            self.connection!.getFibContainer().resetStatus()
                         },
                         label: {
                             Image(systemName: "lightbulb")
                         })
                     
                     NavigationLink(
-                        destination: DoorView(phoneCon: self.phoneCon!).onAppear(){
-                            self.phoneCon!.send(msg: ["FIBARO":true,"GET":true ,"CODE":1]) //Call to fetch data for view.
+                        destination: DoorView(connection: self.connection!).onAppear(){
+                            self.connection!.send(msg: ["FIBARO":true,"GET":true ,"CODE":1]) //Call to fetch data for view.
                             print("protocol FIBARO msg was created and sent")
                         }.onDisappear(){
                             print("Reset Fibaro door")
-                            self.phoneCon!.getFibCSDoor().resetStatus()
+                            self.connection!.getFibCSDoor().resetStatus()
                         },
                         label: {
                             Image(systemName: "greetingcard.fill")
