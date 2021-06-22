@@ -18,8 +18,10 @@ struct ContentView: View {
         self.store = healthStore
         self.connection = connection
         //Move to init.
-        store!.requestAuthorization(){ success in
-            if success {
+        store!.requestAuthorization()
+        { success in
+            if success
+            {
                 print("Authorazation was sucessfully completed")
             }
         }
@@ -48,7 +50,7 @@ struct ContentView: View {
             })
             
             NavigationLink(
-                destination: PhilipHueView(phoneCon: self.connection!).onAppear(){
+                destination: PhilipHueView(con: self.connection!).onAppear(){
                     self.connection!.send(msg: ["HUE":true,"GET":true ,"CODE":0]) //Call to fetch data for view.
                 }.onDisappear(){
                     connection!.getHueContainer().resetStatus()

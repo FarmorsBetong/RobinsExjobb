@@ -42,7 +42,7 @@ class WatchConnection : NSObject, WCSessionDelegate, FibaroObserver, HueObserver
             //<!----------------- FIBARO --------------------!>//
         if let fibaroReq = message["FIBARO"]{
             if let GET = message["GET"]{
-                return self.fibaro!.recMsgFromWatch(code: message["CODE"] as! Int)
+                return self.fibaro!.msgCodeRecieved(code: message["CODE"] as! Int)
             }
             //If not get request -> post request, performe some action in the lab.
             switch message["CODE"] as! Int{
@@ -71,7 +71,7 @@ class WatchConnection : NSObject, WCSessionDelegate, FibaroObserver, HueObserver
             //<!----------------- PHILIP HUE --------------------!>//
         if let hueReq = message["HUE"]{
             if let GET = message["GET"]{
-                return self.hue!.recMsgFromWatch(code: message["CODE"] as! Int)
+                return self.hue!.msgCodeRecieved(code: message["CODE"] as! Int)
             }
             //If not get request -> post request, perform some action in the lab.
             switch message["CODE"] as! Int{

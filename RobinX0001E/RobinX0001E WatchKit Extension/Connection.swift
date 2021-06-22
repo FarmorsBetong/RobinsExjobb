@@ -10,38 +10,33 @@ import WatchConnectivity
 
 
 
-class Connection : NSObject, WCSessionDelegate, ObservableObject, Identifiable, FibaroObserver{
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        //
-    }
+class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, HueObserver{
+   
     
     
     private var notCreator : NotificationCreator!
-    var session : WCSession!
     var fibaro : Fibaro?
+    var hue : HueClient?
     var WC : WatchConnection?
     var philipHueLights : HueContainer
     var fibBS : FibContainer
     var fibCSDoor : FibContainerDoor
     
     
-    init(notification : NotificationCreator){
-        //self.outletDoorList = [Dictionary<String, Any>]()
-
-       // self.outletList = [Dictionary<String, Any>]()
+    init(notification : NotificationCreator, fib : Fibaro, hue : HueClient){
+     
         self.philipHueLights = HueContainer()
         self.fibBS = FibContainer()
         self.fibCSDoor = FibContainerDoor()
-        self.fibaro = Fibaro("unicorn@ltu.se", "jSCN47bC", "130.240.114.44")
+        
+        self.fibaro = fib;
+        self.hue = hue;
         super.init()
         
-        self.WC = WatchConnection(fib : fibaro!)
-        
-        
-       
+        //self.WC = WatchConnection(fib : fibaro!)
         
         guard let fibaro = fibaro else { return }
-        
+        hue.registerObserver(obs: self)
         fibaro.registerObserver(obs: self)
     }
     
@@ -54,7 +49,7 @@ class Connection : NSObject, WCSessionDelegate, ObservableObject, Identifiable, 
         }
     }
 
-
+/*
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
             print("A message has been recieved")
@@ -113,26 +108,90 @@ class Connection : NSObject, WCSessionDelegate, ObservableObject, Identifiable, 
                 }
             }
         }
-    }
+    }*/
     
+    
+    // -------------   protocol functions ----------------
     internal func fibNotification(_ msg :[String : Any]){
         
         print("Fib response inside con class, recieved with the msg:")
+        /*for(key,value) in msg
+        {
+            print("Key: \(key), value: \(value)")
+        }*/
+        
+        DispatchQueue.main.async
+        {
+            
+            //<!--------------------- FIBARO -------------------!>//
+            if let fibaroReq = msg["FIBARO"] {
+                print("Fibaro message recieved")
+                
+                /*if let notification = msg["NOTIFICATION"]
+                {
+                    //Switch here if we want to support different types off notification.
+                    self.sendLocalNotification(body: notification as! String)
+                    return
+                }*/
+                if let responseCode = msg["CODE"]{
+                    switch responseCode as! Int
+                    {
+                    case 0:
+                        print("Recieved fib switches")
+                        self.fibBS.recieveFibSwitches(switches: msg["BODY"] as! [Dictionary<String, Any>])
+                    case 1:
+                        print("Recieved fib doors")
+                        self.fibCSDoor.recieveFibDoors(doors: msg["BODY"] as! [Dictionary<String, Any>])
+                    default:
+                        print("No more actions to be taken for fibaro with responseCode : \(responseCode as! Int) recieved in Connection")
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func hueNotification(_ msg: [String : Any])
+    {
+        
+        print("Hue response recieved with the msg:")
         for(key,value) in msg{
             print("Key: \(key), value: \(value)")
         }
         
-        DispatchQueue.main.async{
-            //self.send(message: msg)
-            print("Recieved msg from Fib in Connection")
-            self.fibBS.recieveFibSwitches(switches: msg["BODY"] as! [Dictionary <String, Any>])
-            //self.con!.fibBS.recieveFibSwitches(switches: msg["BODY"] as! [Dictionary<String, Any>])
-        }
-        
-    }
+        DispatchQueue.main.async
+        {
+            //<!--------------------- PHILIP HUE -------------------!>//
+            if let hueReq = msg["HUE"]
+            {
+                /*if let notification = msg["NOTIFICATION"]{
+                    //Inte satt ngn notification trigger för phue, 10:e mars.
+                    print("HUE recieved")
+                    self.sendLocalNotification(body: notification as! String)
+                    return
+                }*/
+                if let responseCode = msg["CODE"]{
+                    switch responseCode as! Int{
+                    case 0:
+                        let recievedHue = msg["BODY"] as! [String : Int]
+                        print("recievd msg from hueclient with node information:")
+                        for (key,value) in recievedHue{
+                            print("Key \(key) value\(value)")
+                        }
+                        self.philipHueLights.recieveHueLights(lights: recievedHue) //Update hue lights
+                        //Set view for philipHueSwitches.
+                        print("Setup view for philipHue lights")
+                    default:
+                        print("No more actions to be taken for hue with responseCode : \(responseCode as! Int) recieved in Connection")
+                    }
+                }
+            }
+        }//main thread end
+    }//func end
 
+    //  ------------------------------------------------------
     
-    //used to send msg to phone
+    //used to recognise what type of msg and start the chain of events
     func send(msg : [String : Any]){
         print("send msg func is being executed")
         for (key,value) in msg
@@ -140,54 +199,72 @@ class Connection : NSObject, WCSessionDelegate, ObservableObject, Identifiable, 
             print("SENDING KEY: \(key) Value: \(value)")
         }
         
-        fibaro!.recMsgFromWatch(code : msg["CODE"] as! Int)
-        //used to send the msg to the phone
-        /*
-        session.sendMessage(msg, replyHandler: nil, errorHandler: {
-            error in
-            print(error.localizedDescription)
-        })*/
-
-    }
-    //To be implemented.
-    //func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-    /*
-    public func getOutletFlag() -> Bool{
-        return outlletFlag
+        //<!--------------------- FIBARO -------------------!>//
+        if let fibreq = msg["FIBARO"]
+        {
+            if let GET = msg["GET"]
+            {
+                fibaro!.msgCodeRecieved(code : msg["CODE"] as! Int)
+            }
+            
+        }
+        //<!--------------------- PHILIP HUE -------------------!>//
+        if let huereq = msg ["HUE"]
+        {
+            // unwrapping hue, to avoid null pointer
+    
+            
+            if let GET = msg["GET"]
+            {
+                self.hue!.msgCodeRecieved(code: msg["CODE"] as! Int)
+            }
+        
+             guard let node = msg["NODE"] else  { return }
+            //if the msg is not a get req, it's a post
+            switch msg["CODE"] as! Int
+            {
+            case 0:
+                //print("Vi vill sätta på hue med id \(msg["NODE"])")
+                self.hue!.turnOffLight(light: node as! String )
+            case 1:
+                print("vill sätta på")
+                self.hue!.turnOnLight(light: node as! String )
+            default:
+                print("No more action for philip hue")
+            }
+        }
     }
     
-    public func getTempFlag() -> Bool {
-        return tempFlag
-    }
-    
-    public func resetOutletFlag(){
-        self.outlletFlag = false
-    }*/
-    
-    func getHueContainer() -> HueContainer{
+    func getHueContainer() -> HueContainer
+    {
         return philipHueLights
     }
     
-    func getFibContainer() -> FibContainer {
+    func getFibContainer() -> FibContainer
+    {
         return fibBS
     }
-    func getFibCSDoor() -> FibContainerDoor{
+    func getFibCSDoor() -> FibContainerDoor
+    {
         return fibCSDoor
     }
 
 }
 
-class HueContainer : ObservableObject{
+class HueContainer : ObservableObject
+{
     
     @Published var lights : [String : Int]
     private var lightStatus : Bool = false
     
-    init(){
+    init()
+    {
         self.lights = [String : Int]()
     }
     
     //Light id = key, status = value.
-    func recieveHueLights(lights : [String : Int]){
+    func recieveHueLights(lights : [String : Int])
+    {
         print("Setting recieveHueLights to true.")
         self.lightStatus = true
         print("Updating published list off lights.")
@@ -195,32 +272,39 @@ class HueContainer : ObservableObject{
         print("Published list off lights set")
     }
     
-    func getHueLights() -> [String : Int]{
+    func getHueLights() -> [String : Int]
+    {
         print(type(of: lights))
         return lights
     }
     
-    func getHueLightStatus() -> Bool{
+    func getHueLightStatus() -> Bool
+    {
         return lightStatus
     }
-    func resetStatus(){
+    
+    func resetStatus()
+    {
         lightStatus = false
     }
 }
 
-
 // Fib container
 
-class FibContainer : ObservableObject {
+class FibContainer : ObservableObject
+{
     @Published var switches : [Dictionary<String, Any>]
     private var switchStatus : Bool = false
     
-    init(){
+    init()
+    {
+    
         self.switches = [Dictionary<String, Any>]()
     }
     
     //Light id = key, status = value.
-    func recieveFibSwitches(switches : [Dictionary<String, Any>]){
+    func recieveFibSwitches(switches : [Dictionary<String, Any>])
+    {
         
         print("Setting recieveFibSwitches to true.")
         self.switchStatus = true
@@ -229,29 +313,35 @@ class FibContainer : ObservableObject {
         print("Published list off switches set")
     }
     
-    func getFibSwitches() -> [Dictionary<String, Any>]{
+    func getFibSwitches() -> [Dictionary<String, Any>]
+    {
         return switches
     }
     
-    func getFibSwitchesStatus() -> Bool{
+    func getFibSwitchesStatus() -> Bool
+    {
         return switchStatus
     }
-    func resetStatus(){
+    
+    func resetStatus()
+    {
         switchStatus = false
     }
 }
 
-class FibContainerDoor : ObservableObject {
+class FibContainerDoor : ObservableObject
+{
     @Published var doors : [Dictionary<String, Any>]
     private var Status : Bool = false
     
-    init(){
+    init()
+    {
         self.doors = [Dictionary<String, Any>]()
     }
     
     //Light id = key, status = value.
-    func recieveFibDoors(doors : [Dictionary<String, Any>]){
-        
+    func recieveFibDoors(doors : [Dictionary<String, Any>])
+    {
         print("Setting recieveFibSwitches to true.")
         self.Status = true
         print("Updating published list off switches.")
@@ -259,15 +349,18 @@ class FibContainerDoor : ObservableObject {
         print("Published list off switches set")
     }
     
-    func getFibDoor() -> [Dictionary<String, Any>]{
+    func getFibDoor() -> [Dictionary<String, Any>]
+    {
         
         return doors
     }
     
-    func getFibDoorsStatus() -> Bool{
+    func getFibDoorsStatus() -> Bool
+    {
         return Status
     }
-    func resetStatus(){
+    func resetStatus()
+    {
         Status = false
     }
 }

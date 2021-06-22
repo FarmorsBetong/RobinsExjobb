@@ -84,6 +84,7 @@ class HueClient /*: MQTTObserver*/{
         let request = setupGetRequest(task: "lights")
         let task = URLSession.shared.dataTask(with: request){(data, _, _) in
             guard let data = data else{
+                print("no data was available")
                 completion(.failure(.noDataAvailable))
                 return
             }
@@ -130,7 +131,7 @@ class HueClient /*: MQTTObserver*/{
         task.resume()
     }
 
-    
+    /*
     func moveEvent(code: String) {
         switch code{
         case "entering appartement":
@@ -157,10 +158,10 @@ class HueClient /*: MQTTObserver*/{
             print("Unknown code of \(code) recieved in philips hue instance.")
         
         }
-    }
+    }*/
     
     //Get request sent from watch controller, ie send something back.
-    func recMsgFromWatch(code : Int){
+    func msgCodeRecieved(code : Int){
         print("Watch controller wants philip hue to perform task \(code)")
         switch code{
         case 0:
@@ -175,8 +176,6 @@ class HueClient /*: MQTTObserver*/{
         default:
             print("Recieved \(code) from watch - not supported")
             //throw hueError.codeNotSupported
-        
-        
         
         }
     }

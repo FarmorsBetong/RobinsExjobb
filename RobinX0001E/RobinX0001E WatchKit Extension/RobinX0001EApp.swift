@@ -13,13 +13,25 @@ struct RobinX0001EApp: App {
     
     @Environment(\.scenePhase) var phase
     
+    var fibaro : Fibaro?
+    var hue : HueClient?
+    
     var connection: Connection?
     var healthStore: HealthStoreWatch?
     var notification = NotificationCreator()
     
+    
     init() {
         self.healthStore = HealthStoreWatch()
-        self.connection = Connection(notification: notification)
+        
+        self.fibaro = Fibaro("unicorn@ltu.se", "jSCN47bC", "130.240.114.44")
+        self.hue = HueClient("130.240.114.9");
+        
+        //let guard
+        
+        self.connection = Connection(notification: notification, fib: fibaro!, hue: hue!)
+        
+        
     }
     
     @SceneBuilder var body: some Scene {

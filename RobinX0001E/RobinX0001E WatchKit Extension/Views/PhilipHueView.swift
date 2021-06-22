@@ -14,11 +14,10 @@ struct PhilipHueView: View {
     
     //On exit, set false state.
     
-    init(phoneCon : Connection){
+    init(con : Connection){
         print("AADADADADADAD \n\n\n\n")
-        self.WMC = phoneCon
+        self.WMC = con
         self.lights = WMC.getHueContainer()
-        print("Sending msg to phone")
  
     }
     
