@@ -15,7 +15,7 @@ struct PhilipHueView: View {
     //On exit, set false state.
     
     init(con : Connection){
-        print("AADADADADADAD \n\n\n\n")
+        print("\n\n\n\n")
         self.WMC = con
         self.lights = WMC.getHueContainer()
  

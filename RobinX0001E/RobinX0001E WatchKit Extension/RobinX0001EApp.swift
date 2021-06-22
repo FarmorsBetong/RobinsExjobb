@@ -45,15 +45,10 @@ struct RobinX0001EApp: App {
                 switch newPhase{
                 case .active:
                     print("App is active")
-                    //healthStore!.startWorkout()
                 case .inactive:
                     print("App is now inactive")
-                    //healthStore!.recoverFromCrash()
-                    //healthStore!.exitWorkout()
-                    
                 case .background:
                     print("App is in background")
-                    //healthStore!.exitWorkout()
                 @unknown default:
                     print("Some new state, dafuq is happening in thies shieeet.")
                 }

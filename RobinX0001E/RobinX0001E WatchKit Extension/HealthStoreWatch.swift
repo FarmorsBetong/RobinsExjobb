@@ -84,7 +84,6 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
     {
         guard let session = session else { return }
         guard let builder = builder else { return }
-        print("\n\n\n\n\n\n\n start workout method")
         print(session.state.rawValue)
         if session.state.rawValue != 2 {
             session.startActivity(with: Date())
@@ -94,20 +93,23 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
                     return
                 }
                 print("Session and builder started")
+                print("Workout started")
             }
         }
-        
     }
     
-    public func getHeartRate() -> Int {
+    public func getHeartRate() -> Int
+    {
         return Int(self.heartRate)!
     }
     
-    public func getDistanceWalked() -> Int{
+    public func getDistanceWalked() -> Int
+    {
         return self.distanceWalked
     }
 
-    public func exitWorkout(){
+    public func exitWorkout()
+    {
         
         self.session!.end()
         self.builder!.endCollection(withEnd: Date()){ (success,error) in
@@ -124,7 +126,9 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             }
         }
     }
-    public func recoverFromCrash(){
+    
+    public func recoverFromCrash()
+    {
         healthStore!.recoverActiveWorkoutSession{(session,error) in
             guard error == nil else {
                 print("there is an error")

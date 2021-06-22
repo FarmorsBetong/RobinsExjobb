@@ -207,6 +207,21 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
                 fibaro!.msgCodeRecieved(code : msg["CODE"] as! Int)
             }
             
+            guard let node = msg["NODE"] else {return}
+            
+            //If not get request -> post request, performe some action in the lab.
+            switch msg["CODE"] as! Int
+            {
+            case 0:
+                //Code 0 -> turn off "NODE" binarySwitch.
+                self.fibaro!.turnOffSwitch(id: node as! Int)
+            case 1:
+                //Code 1 -> turn on "NODE" binarySwitch.
+                self.fibaro!.turnOnSwitch(id: msg["NODE"] as! Int)
+            default :
+                print("No more actions to be taken for fibaro, call your local developper noob.")
+            }
+            
         }
         //<!--------------------- PHILIP HUE -------------------!>//
         if let huereq = msg ["HUE"]

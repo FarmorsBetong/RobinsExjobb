@@ -222,12 +222,14 @@ class Fibaro/*: MQTTObserver*/{
     }
     
     func turnOnSwitch(id: Int){
+        print("turning on switch")
         let request = self.setupGetRequest(task: "callAction?deviceID=" + String(id) + "&name=turnOn")
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in} //Do something with response code?
         task.resume()
     }
     
     func turnOffSwitch(id: Int){
+        print("turning off switch ")
         let request = setupGetRequest(task: "callAction?deviceID=" + String(id) + "&name=turnOff")
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in } //Do something with response code?
         task.resume()
