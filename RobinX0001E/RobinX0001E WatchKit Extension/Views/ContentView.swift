@@ -25,7 +25,6 @@ struct ContentView: View {
                 print("Authorazation was sucessfully completed")
             }
         }
-        print("vi kör content view init")
         store!.startWorkout()
     }
     

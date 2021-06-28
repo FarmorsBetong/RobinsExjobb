@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9415B07B267E559C0057CD78 /* WatchConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415B07A267E559C0057CD78 /* WatchConnection.swift */; };
+		941AD8182689CE2A0002E0CD /* FallDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AD8172689CE2A0002E0CD /* FallDetection.swift */; };
+		941AD81B2689D0890002E0CD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941AD81A2689D0890002E0CD /* HealthKit.framework */; };
 		945BE46A26790833003E41EE /* HomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE46726790833003E41EE /* HomeKit.swift */; };
 		945BE46C26790833003E41EE /* PhilipHueClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE46926790833003E41EE /* PhilipHueClient.swift */; };
 		945BE47726790ACB003E41EE /* MQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE47626790ACB003E41EE /* MQTTClient.swift */; };
@@ -79,6 +81,9 @@
 
 /* Begin PBXFileReference section */
 		9415B07A267E559C0057CD78 /* WatchConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnection.swift; sourceTree = "<group>"; };
+		941AD8172689CE2A0002E0CD /* FallDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallDetection.swift; sourceTree = "<group>"; };
+		941AD8192689D0890002E0CD /* Applewatch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Applewatch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		941AD81A2689D0890002E0CD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		945BE46726790833003E41EE /* HomeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKit.swift; sourceTree = "<group>"; };
 		945BE46926790833003E41EE /* PhilipHueClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueClient.swift; sourceTree = "<group>"; };
 		945BE47626790ACB003E41EE /* MQTTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTClient.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941AD81B2689D0890002E0CD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +150,7 @@
 		9468D0912677A90C005CE95A = {
 			isa = PBXGroup;
 			children = (
+				941AD8192689D0890002E0CD /* Applewatch WatchKit Extension.entitlements */,
 				9468D0A02677A90C005CE95A /* RobinX0001E WatchKit App */,
 				9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */,
 				9468D0992677A90C005CE95A /* Products */,
@@ -187,6 +194,7 @@
 				9468D0BC2677A915005CE95A /* Info.plist */,
 				9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */,
 				9468D0B92677A915005CE95A /* Preview Content */,
+				941AD8172689CE2A0002E0CD /* FallDetection.swift */,
 			);
 			path = "RobinX0001E WatchKit Extension";
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 		9468D0FA2677AD75005CE95A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				941AD81A2689D0890002E0CD /* HealthKit.framework */,
 				9468D0FB2677AD75005CE95A /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -440,6 +449,7 @@
 				9468D12B2677B6EB005CE95A /* lamp.swift in Sources */,
 				9468D1292677B6EB005CE95A /* FibaroView.swift in Sources */,
 				945BE46C26790833003E41EE /* PhilipHueClient.swift in Sources */,
+				941AD8182689CE2A0002E0CD /* FallDetection.swift in Sources */,
 				9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */,
 				9468D0E72677AAB9005CE95A /* Connection.swift in Sources */,
 				945BE46A26790833003E41EE /* HomeKit.swift in Sources */,
@@ -544,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Applewatch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Applewatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W3354TPG3R;
@@ -568,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Applewatch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Applewatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W3354TPG3R;

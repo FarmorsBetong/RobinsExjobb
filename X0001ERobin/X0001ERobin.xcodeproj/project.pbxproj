@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9415B06B267E3CAC0057CD78 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415B06A267E3CAC0057CD78 /* HealthKit.framework */; };
+		9415B073267E45860057CD78 /* X0001ERobin_WatchKit_ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415B072267E45860057CD78 /* X0001ERobin_WatchKit_ExtensionTests.swift */; };
 		945BE4BB267E0CE3003E41EE /* X0001ERobinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4BA267E0CE3003E41EE /* X0001ERobinApp.swift */; };
 		945BE4BD267E0CE3003E41EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BE4BC267E0CE3003E41EE /* ContentView.swift */; };
 		945BE4BF267E0CE4003E41EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4BE267E0CE4003E41EE /* Assets.xcassets */; };
@@ -21,7 +23,22 @@
 		945BE4DD267E0CE5003E41EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945BE4DC267E0CE5003E41EE /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9415B075267E45860057CD78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 945BE4AF267E0CE3003E41EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 945BE4CD267E0CE5003E41EE;
+			remoteInfo = "X0001ERobin WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9415B068267E3CAC0057CD78 /* X0001ERobin WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "X0001ERobin WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		9415B06A267E3CAC0057CD78 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		9415B070267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "X0001ERobin WatchKit ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415B072267E45860057CD78 /* X0001ERobin_WatchKit_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X0001ERobin_WatchKit_ExtensionTests.swift; sourceTree = "<group>"; };
+		9415B074267E45860057CD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945BE4B7267E0CE3003E41EE /* X0001ERobin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X0001ERobin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945BE4BA267E0CE3003E41EE /* X0001ERobinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X0001ERobinApp.swift; sourceTree = "<group>"; };
 		945BE4BC267E0CE3003E41EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9415B06D267E45860057CD78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		945BE4B4267E0CE3003E41EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,19 +77,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9415B06B267E3CAC0057CD78 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9415B069267E3CAC0057CD78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9415B06A267E3CAC0057CD78 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9415B071267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				9415B072267E45860057CD78 /* X0001ERobin_WatchKit_ExtensionTests.swift */,
+				9415B074267E45860057CD78 /* Info.plist */,
+			);
+			path = "X0001ERobin WatchKit ExtensionTests";
+			sourceTree = "<group>";
+		};
 		945BE4AE267E0CE3003E41EE = {
 			isa = PBXGroup;
 			children = (
 				945BE4B9267E0CE3003E41EE /* X0001ERobin */,
 				945BE4C6267E0CE4003E41EE /* X0001ERobin WatchKit App */,
 				945BE4CE267E0CE5003E41EE /* X0001ERobin WatchKit Extension */,
+				9415B071267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests */,
 				945BE4B8267E0CE3003E41EE /* Products */,
+				9415B069267E3CAC0057CD78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				945BE4B7267E0CE3003E41EE /* X0001ERobin.app */,
+				9415B070267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +154,7 @@
 		945BE4CE267E0CE5003E41EE /* X0001ERobin WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9415B068267E3CAC0057CD78 /* X0001ERobin WatchKit Extension.entitlements */,
 				945BE4CF267E0CE5003E41EE /* X0001ERobinApp.swift */,
 				945BE4D1267E0CE5003E41EE /* ContentView.swift */,
 				945BE4D3267E0CE5003E41EE /* NotificationController.swift */,
@@ -133,6 +179,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9415B06F267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415B077267E45860057CD78 /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit ExtensionTests" */;
+			buildPhases = (
+				9415B06C267E45860057CD78 /* Sources */,
+				9415B06D267E45860057CD78 /* Frameworks */,
+				9415B06E267E45860057CD78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9415B076267E45860057CD78 /* PBXTargetDependency */,
+			);
+			name = "X0001ERobin WatchKit ExtensionTests";
+			productName = "X0001ERobin WatchKit ExtensionTests";
+			productReference = 9415B070267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		945BE4B6267E0CE3003E41EE /* X0001ERobin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 945BE4E2267E0CE5003E41EE /* Build configuration list for PBXNativeTarget "X0001ERobin" */;
@@ -186,9 +250,13 @@
 		945BE4AF267E0CE3003E41EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					9415B06F267E45860057CD78 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 945BE4CD267E0CE5003E41EE;
+					};
 					945BE4B6267E0CE3003E41EE = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -216,11 +284,19 @@
 				945BE4B6267E0CE3003E41EE /* X0001ERobin */,
 				945BE4C5267E0CE4003E41EE /* X0001ERobin WatchKit App */,
 				945BE4CD267E0CE5003E41EE /* X0001ERobin WatchKit Extension */,
+				9415B06F267E45860057CD78 /* X0001ERobin WatchKit ExtensionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9415B06E267E45860057CD78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		945BE4B5267E0CE3003E41EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +326,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9415B06C267E45860057CD78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415B073267E45860057CD78 /* X0001ERobin_WatchKit_ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		945BE4B3267E0CE3003E41EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,7 +357,60 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9415B076267E45860057CD78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 945BE4CD267E0CE5003E41EE /* X0001ERobin WatchKit Extension */;
+			targetProxy = 9415B075267E45860057CD78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		9415B078267E45860057CD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				INFOPLIST_FILE = "X0001ERobin WatchKit ExtensionTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "grupp8.X0001ERobin-WatchKit-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/X0001ERobin WatchKit Extension.appex/X0001ERobin WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		9415B079267E45860057CD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				INFOPLIST_FILE = "X0001ERobin WatchKit ExtensionTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "grupp8.X0001ERobin-WatchKit-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/X0001ERobin WatchKit Extension.appex/X0001ERobin WatchKit Extension";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 		945BE4E0267E0CE5003E41EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -405,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -429,7 +566,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -479,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "X0001ERobin WatchKit Extension/X0001ERobin WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W3354TPG3R;
@@ -503,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "X0001ERobin WatchKit Extension/X0001ERobin WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"X0001ERobin WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W3354TPG3R;
@@ -527,6 +666,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9415B077267E45860057CD78 /* Build configuration list for PBXNativeTarget "X0001ERobin WatchKit ExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415B078267E45860057CD78 /* Debug */,
+				9415B079267E45860057CD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		945BE4B2267E0CE3003E41EE /* Build configuration list for PBXProject "X0001ERobin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -12,6 +12,7 @@ struct HealthView: View {
     @State private var heartRate: Int = 0
     @State private var distance: Int = 0
     @State private var heart: Bool = true
+    //@State private var updateTime : Int = 1
     
     init(store: HealthStoreWatch?){
         self.store = store
@@ -43,6 +44,7 @@ struct HealthView: View {
         self.heartRate = self.store!.getHeartRate()
         self.heart.toggle()
         self.distance = self.store!.distanceWalked
+        //self.updateTime = 60/heartRate
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             update()
         }

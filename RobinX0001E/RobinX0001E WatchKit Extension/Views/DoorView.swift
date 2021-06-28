@@ -28,7 +28,7 @@ struct DoorView: View {
                     ForEach(0..<list.count){ index in
                         let dic = list[index] as! NSDictionary
                         HStack{
-                            //Text("HEJ")
+                           
                             if(dic.value(forKey: "value") as! Bool){
                                 Text("\(dic.value(forKey: "name") as! String)").foregroundColor(.red)
                             }

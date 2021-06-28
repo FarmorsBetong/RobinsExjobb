@@ -115,10 +115,10 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
     internal func fibNotification(_ msg :[String : Any]){
         
         print("Fib response inside con class, recieved with the msg:")
-        /*for(key,value) in msg
+        for(key,value) in msg
         {
             print("Key: \(key), value: \(value)")
-        }*/
+        }
         
         DispatchQueue.main.async
         {
