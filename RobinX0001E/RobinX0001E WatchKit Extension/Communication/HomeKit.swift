@@ -279,13 +279,13 @@ class Fibaro/*: MQTTObserver*/{
             print("Fibaro recieved request to get all binary switches")
             response["CODE"] = 0
             response["BODY"] = self.watchGetOutlets()
-            //self.notifyObservers(msg: response)
+            self.notifyObservers(msg: response)
         case 1:
             print("Fibaro recieved request to send all doors to watch")
             //prep response with status of all doors.
             response["CODE"] = 1
             response["BODY"] = self.watchGetDoors()
-            //self.notifyObservers(msg: response)
+            self.notifyObservers(msg: response)
         default:
             print("Fibaro recieved code: \(code) from watch, somethings fucky.")
         }
@@ -332,10 +332,10 @@ class Fibaro/*: MQTTObserver*/{
     private func notifyObservers(msg : [String : Any]){
         print("Notifying observers of msg from Fibaro:")
         
-        for (key,value) in msg
+        /*for (key,value) in msg
         {
             print("Key: \(key) value: \(value)")
-        }
+        }*/
         for obs in observers
         {
             obs.fibNotification(msg)
