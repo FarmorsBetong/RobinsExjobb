@@ -175,9 +175,9 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
                     case 0:
                         let recievedHue = msg["BODY"] as! [String : Int]
                         print("recievd msg from hueclient with node information:")
-                        for (key,value) in recievedHue{
+                        /*for (key,value) in recievedHue{
                             print("Key \(key) value\(value)")
-                        }
+                        }*/
                         self.philipHueLights.recieveHueLights(lights: recievedHue) //Update hue lights
                         //Set view for philipHueSwitches.
                         print("Setup view for philipHue lights")

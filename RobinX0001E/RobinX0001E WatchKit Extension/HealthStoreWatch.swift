@@ -55,6 +55,8 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             session.delegate = self
             builder.delegate = self
         }
+        //print("test körs")
+        //test()
     }
     
     func requestAuthorization(completion:@escaping (Bool) ->Void) {
@@ -66,7 +68,7 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             //Quantities to read from HealthStore
             let typesToRead = Set([
                 HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-                //HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
+                HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
                 HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
                 HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
             ])
@@ -79,32 +81,52 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
                 completion(success)
             }
     }
-    /*
+    
     func test()
     {
-        let type = HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)
+        print("test körs" )
+        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
         
-        let calendar = NSCalendar.current
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .oxygenSaturation) else { return}
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
         
-        let now = Date()
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
         
-        let components = calendar.dateComponents([.year, .month, .day], from: now)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        guard let startDate = calendar.date(from: components) else {
-            fatalError("ERROR startdate")
+        /*let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+            guard error == nil else {
+                print("error")
+                print(error)
+                return
+            }
+            //print(sample)
+            //print(result)
+            
+            //let data = result![0] as! HKQuantitySample
+            print(result)
+            
+            //print(result![0])
+            //print(result![1])
+            //let unit = HKUnit(from: "count/min")
+            //let latestHR = data.quantity.doubleValue(for: unit)
+            
+            //print("Latest HR \(latestHR) BPM" )
+            
+        }*/
+        
+        let query = HKStatisticsQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (query, statisticsOrNil, errorOrNil) in
+            
+            guard let statistics = statisticsOrNil else {
+                    print("error")
+                    return
+                }
+            
+            //print(statistics)
         }
-        
-        guard let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) else {
-            fatalError("demn end date error")
-        }
-        
-        let today = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        healthStore?.execute(query)
 
-        
-        //let query = HKQuery
-        }
-
-    }*/
+    }
     
     func startWorkout()
     {

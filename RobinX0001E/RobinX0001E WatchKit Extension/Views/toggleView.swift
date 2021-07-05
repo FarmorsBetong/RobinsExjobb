@@ -84,7 +84,7 @@ struct ToggleView : View {
         dic["NODE"] = node
         
         connection.send(msg: dic)
-        print("protocol FIBARO msg was created and sent")
+        print("vi är i sendmsg to phone func")
     }
 }
 /*

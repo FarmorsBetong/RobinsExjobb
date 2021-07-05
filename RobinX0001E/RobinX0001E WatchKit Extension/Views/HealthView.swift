@@ -45,6 +45,7 @@ struct HealthView: View {
         self.heart.toggle()
         self.distance = self.store!.distanceWalked
         //self.updateTime = 60/heartRate
+        self.store!.test()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             update()
         }

@@ -144,10 +144,11 @@ class Fibaro/*: MQTTObserver*/{
                 print(error.localizedDescription)
             case .success(let list):
                 print(" \n\n\n\n\n")
-                print(type(of: list))
+                /*print(type(of: list))
                 for x in list {
                     print(x)
-                }
+                }*/
+                print("List recieved")
                 var msg = [String: Any]()
                 msg["FIBARO"] = true
                 msg["CODE"] = 0
@@ -229,13 +230,18 @@ class Fibaro/*: MQTTObserver*/{
             print(response)
             print(error)
         } //Do something with response code?
+        print("task resumeing")
         task.resume()
     }
     
     func turnOffSwitch(id: Int){
         print("turning off switch ")
         let request = setupGetRequest(task: "callAction?deviceID=" + String(id) + "&name=turnOff")
-        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in } //Do something with response code?
+        print("request was successfully made")
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            print("complition handler")
+        } //Do something with response code?
+        print("task resumeing")
         task.resume()
     }
     /*
@@ -279,13 +285,13 @@ class Fibaro/*: MQTTObserver*/{
             print("Fibaro recieved request to get all binary switches")
             response["CODE"] = 0
             response["BODY"] = self.watchGetOutlets()
-            self.notifyObservers(msg: response)
+            //self.notifyObservers(msg: response)
         case 1:
             print("Fibaro recieved request to send all doors to watch")
             //prep response with status of all doors.
             response["CODE"] = 1
             response["BODY"] = self.watchGetDoors()
-            self.notifyObservers(msg: response)
+            //self.notifyObservers(msg: response)
         default:
             print("Fibaro recieved code: \(code) from watch, somethings fucky.")
         }

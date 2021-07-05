@@ -54,7 +54,7 @@ struct DoorView: View {
         msg["GET"] = true
         msg["CODE"] = code
         connection.send(msg: msg)
-        print("protocol FIBARO msg was created and sent")
+        print("vi är i sendmsg to phone func")
     }
 }
 /*
