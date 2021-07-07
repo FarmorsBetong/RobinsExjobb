@@ -18,14 +18,22 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
     var session: HKWorkoutSession?
     // Live workout builder
     var builder: HKLiveWorkoutBuilder?
-    // Tracking our workout state
-    var workingOut = false
-    // Var that holds current heartRate
-    var heartRate : Int = 0
-    var distanceWalked : Int = 0
+    //configuration
     let configuration : HKWorkoutConfiguration?
     
+    
+    
+    // health variables
+    var heartRate : Int = 0
+    var distanceWalked : Int = 0
+    var oxygenSaturation : Int = 0
+    
+    
+    
     var workoutStarted = false;
+    
+    // Tracking our workout state
+    var workingOut = false
     
     override init() {
         configuration = HKWorkoutConfiguration()
@@ -69,6 +77,9 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             let typesToRead = Set([
                 HKQuantityType.quantityType(forIdentifier: .heartRate)!,
                 HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
+                HKQuantityType.quantityType(forIdentifier: .respiratoryRate)!,
+                HKQuantityType.quantityType(forIdentifier: .bodyMass)!,
+                HKQuantityType.quantityType(forIdentifier: .height)!,
                 HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
                 HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
             ])
@@ -82,29 +93,90 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             }
     }
     
-    func test()
-    {
-        print("test körs" )
-        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
+    func getOxygenSat(){
         
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: .oxygenSaturation) else { return}
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .oxygenSaturation) else { return }
+        
         let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
         
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        /*let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+
             guard error == nil else {
                 print("error")
                 print(error)
                 return
             }
+            
+            
+            guard result!.isEmpty == false else {
+                print("array empty")
+                return
+            }
+            
+            let data = result![0] as! HKQuantitySample
+            
+           //print(data)
+            
+            let unit = HKUnit(from: "%")
+            
+            let latestOxygen = data.quantity.doubleValue(for: unit)
+            
+            print("Latest oxygen rate \(latestOxygen)")
+            
+            self.oxygenSaturation =  Int(latestOxygen * 100)
+           
+            //print("Latest HR \(latestHR) BPM" )
+            
+        
+        }
+        
+        healthStore?.execute(query)
+    }
+    
+    func getOxygen() -> Int {
+        return self.oxygenSaturation
+    }
+    
+    func test()
+    {
+        //print("test körs" )
+        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
+        
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .oxygenSaturation) else { return}
+        
+        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .respiratoryRate) else {return}
+        
+        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .bodyMass) else {return}
+        
+        //guard let sampleType = HKObjectType.quantityType(forIdentifier: .height) else {return}
+        
+        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+            guard error == nil else {
+                print("error")
+                print(error)
+                return
+            }
+            
             //print(sample)
-            //print(result)
+            
+            print(result)
+            guard result != nil else {
+                print("result nil")
+                return
+            }
+           
             
             //let data = result![0] as! HKQuantitySample
-            print(result)
             
             //print(result![0])
             //print(result![1])
@@ -113,17 +185,9 @@ class HealthStoreWatch:  NSObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilde
             
             //print("Latest HR \(latestHR) BPM" )
             
-        }*/
-        
-        let query = HKStatisticsQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (query, statisticsOrNil, errorOrNil) in
-            
-            guard let statistics = statisticsOrNil else {
-                    print("error")
-                    return
-                }
-            
-            //print(statistics)
         }
+        
+    
         healthStore?.execute(query)
 
     }

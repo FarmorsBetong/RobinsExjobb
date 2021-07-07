@@ -12,10 +12,12 @@ struct HealthView: View {
     @State private var heartRate: Int = 0
     @State private var distance: Int = 0
     @State private var heart: Bool = true
-    //@State private var updateTime : Int = 1
+    @State private var oxygenSaturation : Int = 0
     
     init(store: HealthStoreWatch?){
         self.store = store
+        self.store!.getOxygenSat()
+        
     }
     
     var body: some View {
@@ -30,7 +32,11 @@ struct HealthView: View {
             
             Label(String(distance), systemImage: "figure.walk").foregroundColor(.green)
             
-            ProgressView(value: Double(distance), total: 1000.0).preferredColorScheme(.dark)
+            //ProgressView(value: Double(distance), total: 1000.0).preferredColorScheme(.dark)
+            
+            Label(String(oxygenSaturation), systemImage: "percent").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            
+            
 
         }
         .onAppear(){
@@ -42,10 +48,14 @@ struct HealthView: View {
     func update() {
         // Update first then create a sync call to delay next update
         self.heartRate = self.store!.getHeartRate()
-        self.heart.toggle()
         self.distance = self.store!.distanceWalked
+        self.oxygenSaturation = self.store!.getOxygen()
+        self.heart.toggle()
+        
+        self.store!.getOxygenSat()
         //self.updateTime = 60/heartRate
-        self.store!.test()
+        //self.store!.test()
+        //self.store!.getOxygenSat()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             update()
         }
