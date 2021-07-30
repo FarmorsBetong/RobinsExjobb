@@ -28,7 +28,8 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
         self.philipHueLights = HueContainer()
         self.fibBS = FibContainer()
         self.fibCSDoor = FibContainerDoor()
-        
+            
+        self.notCreator = notification
         self.fibaro = fib;
         self.hue = hue;
         super.init()
@@ -38,11 +39,14 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
         guard let fibaro = fibaro else { return }
         hue.registerObserver(obs: self)
         fibaro.registerObserver(obs: self)
+        
+        sendLocalNotification(body: "test")
+        
     }
     
     
     //Used for sending notifications recieved from phone.
-    func sendLocalNotification(_ title: String = "Grp8Application",_ subtitle: String = "Warning", body: String){
+    func sendLocalNotification(_ title: String = "Robins app",_ subtitle: String = "Warning", body: String){
         if let notificationCreater = self.notCreator{
             notificationCreater.createNotification(title: title, subtitle: subtitle, body: body, badge: 0)
             //Change badge to increament

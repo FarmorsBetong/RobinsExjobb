@@ -31,7 +31,7 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Text("Group-8 App").padding()
+            Text("Robins Application").padding()
             
             NavigationLink(
                 destination: HealthView(store:store!),
