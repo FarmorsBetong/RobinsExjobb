@@ -47,8 +47,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSFAllDetectionUsageDescription</key>
+	<string>Requesting to use fall detection services on this application</string>
 	<key>NSFallDetectionUsageDescription</key>
-	<string>Want to access fall detection</string>
+	<string>Permission to access falldetection services for this application</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Want to access data of healthstore to read/write</string>
 	<key>NSHealthUpdateUsageDescription</key>
@@ -56,7 +58,7 @@
 	<key>NSHomeKitUsageDescription</key>
 	<string>Configure accessories from Fibaro Devices</string>
 	<key>NSMotionUsageDescription</key>
-	<string></string>
+	<string>Access the accelerometer</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -65,15 +67,16 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
-	<array/>
+	<array>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
 	<key>WKBackgroundModes</key>
-	<array>
-		<string>workout-processing</string>
-	</array>
+	<array/>
 	<key>WKWatchOnly</key>
 	<true/>
 </dict>

@@ -14,7 +14,6 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
    
     
     
-    private var notCreator : NotificationCreator!
     var fibaro : Fibaro?
     var hue : HueClient?
     var WC : WatchConnection?
@@ -23,13 +22,12 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
     var fibCSDoor : FibContainerDoor
     
     
-    init(notification : NotificationCreator, fib : Fibaro, hue : HueClient){
+    init(fib : Fibaro, hue : HueClient){
      
         self.philipHueLights = HueContainer()
         self.fibBS = FibContainer()
         self.fibCSDoor = FibContainerDoor()
             
-        self.notCreator = notification
         self.fibaro = fib;
         self.hue = hue;
         super.init()
@@ -40,18 +38,12 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
         hue.registerObserver(obs: self)
         fibaro.registerObserver(obs: self)
         
-        sendLocalNotification(body: "test")
+        //sendLocalNotification(body: "test")
         
     }
     
     
-    //Used for sending notifications recieved from phone.
-    func sendLocalNotification(_ title: String = "Robins app",_ subtitle: String = "Warning", body: String){
-        if let notificationCreater = self.notCreator{
-            notificationCreater.createNotification(title: title, subtitle: subtitle, body: body, badge: 0)
-            //Change badge to increament
-        }
-    }
+
 
 /*
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {

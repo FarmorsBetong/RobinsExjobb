@@ -17,27 +17,41 @@ struct DataList: Identifiable {
 struct HealthView: View
 {
     var store: HealthStoreWatch?
-    @State private var heartRate: Int = 0
-    @State private var distance: Int = 0
     @State private var heart: Bool = true
-    @State private var oxygenSaturation : Int = 0
+    
+    
+    @ObservedObject var hrCon: HeartRateContainer
+    @ObservedObject var stepsCon : StepsContainer
+    @ObservedObject var oxygenCon : OxygenContainer
     
     var data :[DataList] = [
     DataList(dataName: "Current Heart Rate"),
-    DataList(dataName: "Steps"),
-    DataList(dataName: "OxygenSaturation")
+    DataList(dataName: "OxygenSaturation"),
+    DataList(dataName: "Steps")
+    
     ]
     
     init(store: HealthStoreWatch?)
     {
         self.store = store
-        self.store!.getOxygenSat()
+        
+        //set containers
+        self.hrCon = store!.hrCon
+        self.stepsCon = store!.stepCon
+        self.oxygenCon = store!.oxygenCon
+    
+        
+        //Create the running queries
+        store!.observQueryHeartRate()
+        store!.observQueryOxygenSaturation()
+        store!.startStepUpdate()
     }
     
     var body: some View {
         
         List
         {
+            
          
             ForEach(data, id :\.id){ currentData in
                 
@@ -53,7 +67,7 @@ struct HealthView: View
                             {
                                 HStack
                                 {
-                                    Label(String(heartRate), systemImage: "heart.fill").foregroundColor(.red)
+                                    Label(String(hrCon.getHeartRate()), systemImage: "heart.fill").foregroundColor(.red)
                                     Text("BPM").foregroundColor(.red).fontWeight(.heavy)
                                 }
                                
@@ -62,12 +76,14 @@ struct HealthView: View
                             {
                                 HStack
                                 {
-                                    Label(String(heartRate), systemImage: "heart").foregroundColor(.red)
+                                    Label(String(hrCon.getHeartRate()), systemImage: "heart").foregroundColor(.red)
                                     Text("BPM").foregroundColor(.red).fontWeight(.heavy)
                                 }
                                 
                             }
-                            //ProgressView(value: Double(heartRate), total: 200.0).preferredColorScheme(.dark)
+                        }
+                        NavigationLink(destination: HeartRateStatView()) {
+                            
                         }
                         
                     }
@@ -78,9 +94,15 @@ struct HealthView: View
                         {
                             Text("Steps taken")
                             
-                            Label(String(distance), systemImage: "figure.walk").foregroundColor(.green)
+                            Label(String(stepsCon.getSteps()), systemImage: "figure.walk").foregroundColor(.green)
                                 
-                            ProgressView(value: Double(distance), total: 1000.0).preferredColorScheme(.dark)
+                            ProgressView(value: Double(stepsCon.getSteps()), total: 10000.0).preferredColorScheme(.dark)
+                            
+                            Label(stepsCon.getPace(), systemImage: "speedometer").foregroundColor(.green)
+                        }
+                        
+                        NavigationLink(destination: Text("test View")) {
+                            
                         }
                     }
                     
@@ -91,42 +113,17 @@ struct HealthView: View
                         
                         HStack
                         {
-                            Text(String(oxygenSaturation)).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            Text(String(oxygenCon.getOxygenLevel())).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             Image(systemName: "percent")
                         }
                     }
-                    //if(current)
-                    //Displays the heartrate
                     
                 }
+                
             }
         }
         
-         /*
-        VStack{
-                
-            VStack{
-                //Displays the heartrate
-                if heart{
-                Label(String(heartRate), systemImage: "heart.fill").foregroundColor(.red)
-                }
-                else
-                {
-                    Label(String(heartRate), systemImage: "heart").foregroundColor(.red)
-                }
-                ProgressView(value: Double(heartRate), total: 200.0).preferredColorScheme(.dark)
-            }.foregroundColor(.gray)
-                
-                
-            Label(String(distance), systemImage: "figure.walk").foregroundColor(.green)
-                
-            //ProgressView(value: Double(distance), total: 1000.0).preferredColorScheme(.dark)
-                
-            Label(String(oxygenSaturation), systemImage: "percent").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                
-                
-
-        }*/
+    
         
         .onAppear(){
             //Starts the function that updates the current value of State variable
@@ -134,18 +131,12 @@ struct HealthView: View
         }
     }
     
-    func update() {
-        // Update first then create a sync call to delay next update
-        self.heartRate = self.store!.getHeartRate()
-        self.distance = self.store!.distanceWalked
-        self.oxygenSaturation = self.store!.getOxygen()
+    func update()
+    {
         self.heart.toggle()
-        
-        self.store!.getOxygenSat()
-        //self.updateTime = 60/heartRate
-        //self.store!.test()
-        //self.store!.getOxygenSat()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+    
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1)
+        {
             update()
         }
     }

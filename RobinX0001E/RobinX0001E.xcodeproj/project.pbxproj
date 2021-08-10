@@ -35,6 +35,9 @@
 		9468D12F2677B6EB005CE95A /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1202677B6EB005CE95A /* DoorView.swift */; };
 		9468D1302677B6EB005CE95A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1212677B6EB005CE95A /* ContentView.swift */; };
 		9468D1312677B6EB005CE95A /* toggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468D1252677B6EB005CE95A /* toggleView.swift */; };
+		94A8EAFD26A80B2F00E9C6A2 /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A8EAFC26A80B2F00E9C6A2 /* Accelerometer.swift */; };
+		94A8EB4E26B1862600E9C6A2 /* WideFindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A8EB4D26B1862600E9C6A2 /* WideFindView.swift */; };
+		94A8EBF226BD564C00E9C6A2 /* HeartRateStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A8EBF126BD564C00E9C6A2 /* HeartRateStatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +101,6 @@
 		9468D0B52677A914005CE95A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		9468D0B72677A915005CE95A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9468D0BA2677A915005CE95A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9468D0BC2677A915005CE95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9468D0E12677AAB9005CE95A /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		9468D0E32677AAB9005CE95A /* HealthStoreWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreWatch.swift; sourceTree = "<group>"; };
@@ -114,9 +116,27 @@
 		9468D1262677B6EB005CE95A /* lamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lamp.swift; sourceTree = "<group>"; };
 		9468D1272677B6EB005CE95A /* FibaroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibaroView.swift; sourceTree = "<group>"; };
 		9468D1282677B6EB005CE95A /* ZWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWaveView.swift; sourceTree = "<group>"; };
+		94A8EAFC26A80B2F00E9C6A2 /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
+		94A8EB4D26B1862600E9C6A2 /* WideFindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideFindView.swift; sourceTree = "<group>"; };
+		94A8EBF126BD564C00E9C6A2 /* HeartRateStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateStatView.swift; sourceTree = "<group>"; };
+		94A8EC1B26C1830200E9C6A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C8A80D733100108F4704921 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779C848B3CB3AA39B3C45DA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		945BE48426791959003E41EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +150,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9468D0FC2677AD75005CE95A /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F21ED89305656B729CAD2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD3277AE35AB931FCD15AAAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +214,7 @@
 		9468D0AC2677A914005CE95A /* RobinX0001E WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				94A8EC1B26C1830200E9C6A2 /* Info.plist */,
 				945BE46126790795003E41EE /* Communication */,
 				9468D13A2677B720005CE95A /* Views */,
 				9468D1032677B25E005CE95A /* NotificationCreator.swift */,
@@ -191,10 +226,10 @@
 				9468D0B32677A914005CE95A /* NotificationView.swift */,
 				9468D0B52677A914005CE95A /* ComplicationController.swift */,
 				9468D0B72677A915005CE95A /* Assets.xcassets */,
-				9468D0BC2677A915005CE95A /* Info.plist */,
 				9468D0BD2677A915005CE95A /* PushNotificationPayload.apns */,
 				9468D0B92677A915005CE95A /* Preview Content */,
 				941AD8172689CE2A0002E0CD /* FallDetection.swift */,
+				94A8EAFC26A80B2F00E9C6A2 /* Accelerometer.swift */,
 			);
 			path = "RobinX0001E WatchKit Extension";
 			sourceTree = "<group>";
@@ -228,6 +263,8 @@
 				9468D1242677B6EB005CE95A /* PhilipHueView.swift */,
 				9468D1252677B6EB005CE95A /* toggleView.swift */,
 				9468D1282677B6EB005CE95A /* ZWaveView.swift */,
+				94A8EB4D26B1862600E9C6A2 /* WideFindView.swift */,
+				94A8EBF126BD564C00E9C6A2 /* HeartRateStatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +277,7 @@
 			buildConfigurationList = 945BE49F2679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch" */;
 			buildPhases = (
 				945BE47B26791958003E41EE /* Resources */,
+				A0F21ED89305656B729CAD2D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +292,7 @@
 			buildConfigurationList = 945BE4A02679195A003E41EE /* Build configuration list for PBXNativeTarget "Applewatch WatchKit App" */;
 			buildPhases = (
 				945BE47D26791958003E41EE /* Resources */,
+				779C848B3CB3AA39B3C45DA5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +324,7 @@
 			buildPhases = (
 				9468D0962677A90C005CE95A /* Resources */,
 				9468D0C72677A915005CE95A /* Embed Watch Content */,
+				5C8A80D733100108F4704921 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +342,7 @@
 			buildPhases = (
 				9468D09A2677A90C005CE95A /* Resources */,
 				9468D0C32677A915005CE95A /* Embed App Extensions */,
+				BD3277AE35AB931FCD15AAAF /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +490,8 @@
 				9468D12B2677B6EB005CE95A /* lamp.swift in Sources */,
 				9468D1292677B6EB005CE95A /* FibaroView.swift in Sources */,
 				945BE46C26790833003E41EE /* PhilipHueClient.swift in Sources */,
+				94A8EB4E26B1862600E9C6A2 /* WideFindView.swift in Sources */,
+				94A8EAFD26A80B2F00E9C6A2 /* Accelerometer.swift in Sources */,
 				941AD8182689CE2A0002E0CD /* FallDetection.swift in Sources */,
 				9468D0E92677AAB9005CE95A /* HealthStoreWatch.swift in Sources */,
 				9468D0E72677AAB9005CE95A /* Connection.swift in Sources */,
@@ -457,6 +500,7 @@
 				9415B07B267E559C0057CD78 /* WatchConnection.swift in Sources */,
 				9468D12C2677B6EB005CE95A /* HealthView.swift in Sources */,
 				9468D12A2677B6EB005CE95A /* PhilipHueToggleView.swift in Sources */,
+				94A8EBF226BD564C00E9C6A2 /* HeartRateStatView.swift in Sources */,
 				9468D1042677B25E005CE95A /* NotificationCreator.swift in Sources */,
 				9468D1302677B6EB005CE95A /* ContentView.swift in Sources */,
 				9468D0B62677A914005CE95A /* ComplicationController.swift in Sources */,

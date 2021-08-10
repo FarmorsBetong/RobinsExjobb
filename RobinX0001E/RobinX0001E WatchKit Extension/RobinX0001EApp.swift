@@ -20,17 +20,21 @@ struct RobinX0001EApp: App {
     var healthStore: HealthStoreWatch?
     var notification = NotificationCreator()
     
+    //Fall references
+    //let motion = Accelerometer()
+    //let FDM : Falldetection?
     
     init() {
-        self.healthStore = HealthStoreWatch()
+        self.healthStore = HealthStoreWatch(notification: notification)
         
         self.fibaro = Fibaro("unicorn@ltu.se", "jSCN47bC", "130.240.114.44")
         self.hue = HueClient("130.240.114.9");
         
-        //let guard
+        //self.FDM = Falldetection(NotifcationCreator: notification)
         
-        self.connection = Connection(notification: notification, fib: fibaro!, hue: hue!)
+        self.connection = Connection(fib: fibaro!, hue: hue!)
         
+        //motion.startAccelerometer()
         
     }
     
@@ -40,6 +44,14 @@ struct RobinX0001EApp: App {
                 ContentView(healthStore: healthStore!, connection: connection!).onAppear(){
                     print("View did load, requesting access to notifications:")
                     notification.RequestNotificationAuthorization()
+                    healthStore!.requestAuthorization()
+                    { success in
+                        if success
+                        {
+                            print("Authorazation was sucessfully completed")
+                        }
+                    }
+                    //notification.checkNotificationSetting()
                 }
             }.onChange(of: phase){ newPhase in
                 switch newPhase{
@@ -47,8 +59,10 @@ struct RobinX0001EApp: App {
                     print("App is active")
                 case .inactive:
                     print("App is now inactive")
+                    
                 case .background:
                     print("App is in background")
+                    
                 @unknown default:
                     print("Some new state, dafuq is happening in thies shieeet.")
                 }

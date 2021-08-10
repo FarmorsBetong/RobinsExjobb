@@ -16,7 +16,7 @@ class NotificationCreator : NSObject{
         notification.subtitle = subtitle
         notification.body = body
         notification.badge = badge! as NSNumber
-        notification.sound = UNNotificationSound.default
+        notification.sound = UNNotificationSound.defaultCritical
 
         
         let request = UNNotificationRequest(identifier: "TestLocalNotification", content: notification, trigger: nil)
@@ -47,7 +47,17 @@ class NotificationCreator : NSObject{
             
         }
     }
+    
+    func checkNotificationSetting()
+    {
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings() { (settings) in
+            print(settings.announcementSetting.rawValue)
+        }
+    }
 }
+
+
 
 extension NotificationCreator : UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
