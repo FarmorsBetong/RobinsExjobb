@@ -1,0 +1,6 @@
+framework module Pods_MQTT_App_WatchKit_App {
+  umbrella header "Pods-MQTT App WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

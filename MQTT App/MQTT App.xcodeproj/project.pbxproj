@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		189CA15B0A601236DB3C373D /* Pods_MQTT_App_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0C63680BAA86384DCB6A89 /* Pods_MQTT_App_WatchKit_App.framework */; };
+		942FC9E726C2D66400536375 /* MQTT_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FC9E626C2D66400536375 /* MQTT_AppApp.swift */; };
+		942FC9E926C2D66400536375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FC9E826C2D66400536375 /* ContentView.swift */; };
+		942FC9EB26C2D66500536375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942FC9EA26C2D66500536375 /* Assets.xcassets */; };
+		942FC9EE26C2D66500536375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942FC9ED26C2D66500536375 /* Preview Assets.xcassets */; };
+		942FC9F326C2D66500536375 /* MQTT App WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 942FC9F226C2D66500536375 /* MQTT App WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		942FC9F826C2D66500536375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942FC9F726C2D66500536375 /* Assets.xcassets */; };
+		942FC9FF26C2D66600536375 /* MQTT App WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 942FC9FE26C2D66600536375 /* MQTT App WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		942FCA0426C2D66600536375 /* MQTT_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA0326C2D66600536375 /* MQTT_AppApp.swift */; };
+		942FCA0626C2D66600536375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA0526C2D66600536375 /* ContentView.swift */; };
+		942FCA0826C2D66600536375 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA0726C2D66600536375 /* NotificationController.swift */; };
+		942FCA0A26C2D66600536375 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA0926C2D66600536375 /* NotificationView.swift */; };
+		942FCA0C26C2D66600536375 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA0B26C2D66600536375 /* ComplicationController.swift */; };
+		942FCA0E26C2D66600536375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942FCA0D26C2D66600536375 /* Assets.xcassets */; };
+		942FCA1126C2D66600536375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942FCA1026C2D66600536375 /* Preview Assets.xcassets */; };
+		942FCA2326C2DF3500536375 /* MQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2126C2DF3500536375 /* MQTTClient.swift */; };
+		942FCA2426C2DF3500536375 /* WatchOSCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2226C2DF3500536375 /* WatchOSCommunication.swift */; };
+		942FCA2726C2E19E00536375 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942FCA2626C2E19E00536375 /* HealthKit.framework */; };
+		942FCA3026C2E26200536375 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2A26C2E26200536375 /* Connection.swift */; };
+		942FCA3126C2E26200536375 /* HomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2B26C2E26200536375 /* HomeKit.swift */; };
+		942FCA3226C2E26200536375 /* HealthStoreWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2C26C2E26200536375 /* HealthStoreWatch.swift */; };
+		942FCA3326C2E26200536375 /* PhilipHueClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2D26C2E26200536375 /* PhilipHueClient.swift */; };
+		942FCA3426C2E26200536375 /* IOSCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2E26C2E26200536375 /* IOSCommunication.swift */; };
+		942FCA3526C2E26200536375 /* NotificationCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA2F26C2E26200536375 /* NotificationCreator.swift */; };
+		942FCA4026C2E35200536375 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3726C2E35200536375 /* HealthView.swift */; };
+		942FCA4126C2E35200536375 /* lamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3826C2E35200536375 /* lamp.swift */; };
+		942FCA4226C2E35200536375 /* HeartRateStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3926C2E35200536375 /* HeartRateStatView.swift */; };
+		942FCA4326C2E35200536375 /* PhilipHueToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3A26C2E35200536375 /* PhilipHueToggleView.swift */; };
+		942FCA4426C2E35200536375 /* WideFindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3B26C2E35200536375 /* WideFindView.swift */; };
+		942FCA4526C2E35200536375 /* toggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3C26C2E35200536375 /* toggleView.swift */; };
+		942FCA4626C2E35200536375 /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3D26C2E35200536375 /* DoorView.swift */; };
+		942FCA4726C2E35200536375 /* FibaroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3E26C2E35200536375 /* FibaroView.swift */; };
+		942FCA4826C2E35200536375 /* PhilipHueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3F26C2E35200536375 /* PhilipHueView.swift */; };
+		9DEBE51A2E82C49FAA56551C /* Pods_MQTT_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F088F887460A7F70430776D2 /* Pods_MQTT_App.framework */; };
+		BF32E9D40A8672853055044E /* Pods_MQTT_App_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF59BCDD7EA273FA63F7CD64 /* Pods_MQTT_App_WatchKit_Extension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		942FC9F426C2D66500536375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 942FC9DB26C2D66400536375 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 942FC9F126C2D66500536375;
+			remoteInfo = "MQTT App WatchKit App";
+		};
+		942FCA0026C2D66600536375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 942FC9DB26C2D66400536375 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 942FC9FD26C2D66600536375;
+			remoteInfo = "MQTT App WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		942FCA1926C2D66600536375 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				942FC9FF26C2D66600536375 /* MQTT App WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FCA1D26C2D66600536375 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				942FC9F326C2D66500536375 /* MQTT App WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A7C135E1C69195475E714A2 /* Pods-MQTT App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App.debug.xcconfig"; path = "Target Support Files/Pods-MQTT App/Pods-MQTT App.debug.xcconfig"; sourceTree = "<group>"; };
+		5CF18F9B5B69026D5D1B2CAF /* Pods-MQTT App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App.release.xcconfig"; path = "Target Support Files/Pods-MQTT App/Pods-MQTT App.release.xcconfig"; sourceTree = "<group>"; };
+		7D0C63680BAA86384DCB6A89 /* Pods_MQTT_App_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTT_App_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9133227227704E06027885C0 /* Pods-MQTT App WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit Extension/Pods-MQTT App WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		941618F36C450FBA4825A62D /* Pods-MQTT App WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit Extension/Pods-MQTT App WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		942FC9E326C2D66400536375 /* MQTT App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MQTT App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942FC9E626C2D66400536375 /* MQTT_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTT_AppApp.swift; sourceTree = "<group>"; };
+		942FC9E826C2D66400536375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		942FC9EA26C2D66500536375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		942FC9ED26C2D66500536375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		942FC9EF26C2D66500536375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942FC9F226C2D66500536375 /* MQTT App WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MQTT App WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942FC9F726C2D66500536375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		942FC9F926C2D66500536375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942FC9FE26C2D66600536375 /* MQTT App WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MQTT App WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942FCA0326C2D66600536375 /* MQTT_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTT_AppApp.swift; sourceTree = "<group>"; };
+		942FCA0526C2D66600536375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		942FCA0726C2D66600536375 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		942FCA0926C2D66600536375 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		942FCA0B26C2D66600536375 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		942FCA0D26C2D66600536375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		942FCA1026C2D66600536375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		942FCA1226C2D66600536375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942FCA1326C2D66600536375 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		942FCA2126C2DF3500536375 /* MQTTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTClient.swift; sourceTree = "<group>"; };
+		942FCA2226C2DF3500536375 /* WatchOSCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchOSCommunication.swift; sourceTree = "<group>"; };
+		942FCA2526C2E19E00536375 /* MQTT App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MQTT App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		942FCA2626C2E19E00536375 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		942FCA2A26C2E26200536375 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		942FCA2B26C2E26200536375 /* HomeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKit.swift; sourceTree = "<group>"; };
+		942FCA2C26C2E26200536375 /* HealthStoreWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreWatch.swift; sourceTree = "<group>"; };
+		942FCA2D26C2E26200536375 /* PhilipHueClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueClient.swift; sourceTree = "<group>"; };
+		942FCA2E26C2E26200536375 /* IOSCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSCommunication.swift; sourceTree = "<group>"; };
+		942FCA2F26C2E26200536375 /* NotificationCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCreator.swift; sourceTree = "<group>"; };
+		942FCA3726C2E35200536375 /* HealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		942FCA3826C2E35200536375 /* lamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lamp.swift; sourceTree = "<group>"; };
+		942FCA3926C2E35200536375 /* HeartRateStatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateStatView.swift; sourceTree = "<group>"; };
+		942FCA3A26C2E35200536375 /* PhilipHueToggleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueToggleView.swift; sourceTree = "<group>"; };
+		942FCA3B26C2E35200536375 /* WideFindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WideFindView.swift; sourceTree = "<group>"; };
+		942FCA3C26C2E35200536375 /* toggleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toggleView.swift; sourceTree = "<group>"; };
+		942FCA3D26C2E35200536375 /* DoorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
+		942FCA3E26C2E35200536375 /* FibaroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibaroView.swift; sourceTree = "<group>"; };
+		942FCA3F26C2E35200536375 /* PhilipHueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueView.swift; sourceTree = "<group>"; };
+		CA8ADB600606CCA7467AAC70 /* Pods-MQTT App WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit App/Pods-MQTT App WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		F088F887460A7F70430776D2 /* Pods_MQTT_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTT_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB378EA6E003D1C59669952E /* Pods-MQTT App WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit App/Pods-MQTT App WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		FF59BCDD7EA273FA63F7CD64 /* Pods_MQTT_App_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTT_App_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7963D5CB9D9CF715BAF328A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189CA15B0A601236DB3C373D /* Pods_MQTT_App_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FC9E026C2D66400536375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DEBE51A2E82C49FAA56551C /* Pods_MQTT_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FC9FB26C2D66600536375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF32E9D40A8672853055044E /* Pods_MQTT_App_WatchKit_Extension.framework in Frameworks */,
+				942FCA2726C2E19E00536375 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B0FF0042875C78F0393E8FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				942FCA2626C2E19E00536375 /* HealthKit.framework */,
+				F088F887460A7F70430776D2 /* Pods_MQTT_App.framework */,
+				7D0C63680BAA86384DCB6A89 /* Pods_MQTT_App_WatchKit_App.framework */,
+				FF59BCDD7EA273FA63F7CD64 /* Pods_MQTT_App_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		942FC9DA26C2D66400536375 = {
+			isa = PBXGroup;
+			children = (
+				942FC9E526C2D66400536375 /* MQTT App */,
+				942FC9F626C2D66500536375 /* MQTT App WatchKit App */,
+				942FCA0226C2D66600536375 /* MQTT App WatchKit Extension */,
+				942FC9E426C2D66400536375 /* Products */,
+				AB42AF599D29D5BBF7FF791B /* Pods */,
+				7B0FF0042875C78F0393E8FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		942FC9E426C2D66400536375 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				942FC9E326C2D66400536375 /* MQTT App.app */,
+				942FC9F226C2D66500536375 /* MQTT App WatchKit App.app */,
+				942FC9FE26C2D66600536375 /* MQTT App WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		942FC9E526C2D66400536375 /* MQTT App */ = {
+			isa = PBXGroup;
+			children = (
+				942FCA2126C2DF3500536375 /* MQTTClient.swift */,
+				942FCA2226C2DF3500536375 /* WatchOSCommunication.swift */,
+				942FC9E626C2D66400536375 /* MQTT_AppApp.swift */,
+				942FC9E826C2D66400536375 /* ContentView.swift */,
+				942FC9EA26C2D66500536375 /* Assets.xcassets */,
+				942FC9EF26C2D66500536375 /* Info.plist */,
+				942FC9EC26C2D66500536375 /* Preview Content */,
+			);
+			path = "MQTT App";
+			sourceTree = "<group>";
+		};
+		942FC9EC26C2D66500536375 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				942FC9ED26C2D66500536375 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		942FC9F626C2D66500536375 /* MQTT App WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				942FC9F726C2D66500536375 /* Assets.xcassets */,
+				942FC9F926C2D66500536375 /* Info.plist */,
+			);
+			path = "MQTT App WatchKit App";
+			sourceTree = "<group>";
+		};
+		942FCA0226C2D66600536375 /* MQTT App WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				942FCA3626C2E33600536375 /* WatchViews */,
+				942FCA2A26C2E26200536375 /* Connection.swift */,
+				942FCA2C26C2E26200536375 /* HealthStoreWatch.swift */,
+				942FCA2B26C2E26200536375 /* HomeKit.swift */,
+				942FCA2E26C2E26200536375 /* IOSCommunication.swift */,
+				942FCA2F26C2E26200536375 /* NotificationCreator.swift */,
+				942FCA2D26C2E26200536375 /* PhilipHueClient.swift */,
+				942FCA2526C2E19E00536375 /* MQTT App WatchKit Extension.entitlements */,
+				942FCA0326C2D66600536375 /* MQTT_AppApp.swift */,
+				942FCA0526C2D66600536375 /* ContentView.swift */,
+				942FCA0726C2D66600536375 /* NotificationController.swift */,
+				942FCA0926C2D66600536375 /* NotificationView.swift */,
+				942FCA0B26C2D66600536375 /* ComplicationController.swift */,
+				942FCA0D26C2D66600536375 /* Assets.xcassets */,
+				942FCA1226C2D66600536375 /* Info.plist */,
+				942FCA1326C2D66600536375 /* PushNotificationPayload.apns */,
+				942FCA0F26C2D66600536375 /* Preview Content */,
+			);
+			path = "MQTT App WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		942FCA0F26C2D66600536375 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				942FCA1026C2D66600536375 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		942FCA3626C2E33600536375 /* WatchViews */ = {
+			isa = PBXGroup;
+			children = (
+				942FCA3D26C2E35200536375 /* DoorView.swift */,
+				942FCA3E26C2E35200536375 /* FibaroView.swift */,
+				942FCA3726C2E35200536375 /* HealthView.swift */,
+				942FCA3926C2E35200536375 /* HeartRateStatView.swift */,
+				942FCA3826C2E35200536375 /* lamp.swift */,
+				942FCA3A26C2E35200536375 /* PhilipHueToggleView.swift */,
+				942FCA3F26C2E35200536375 /* PhilipHueView.swift */,
+				942FCA3C26C2E35200536375 /* toggleView.swift */,
+				942FCA3B26C2E35200536375 /* WideFindView.swift */,
+			);
+			path = WatchViews;
+			sourceTree = "<group>";
+		};
+		AB42AF599D29D5BBF7FF791B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A7C135E1C69195475E714A2 /* Pods-MQTT App.debug.xcconfig */,
+				5CF18F9B5B69026D5D1B2CAF /* Pods-MQTT App.release.xcconfig */,
+				CA8ADB600606CCA7467AAC70 /* Pods-MQTT App WatchKit App.debug.xcconfig */,
+				FB378EA6E003D1C59669952E /* Pods-MQTT App WatchKit App.release.xcconfig */,
+				9133227227704E06027885C0 /* Pods-MQTT App WatchKit Extension.debug.xcconfig */,
+				941618F36C450FBA4825A62D /* Pods-MQTT App WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		942FC9E226C2D66400536375 /* MQTT App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942FCA1E26C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App" */;
+			buildPhases = (
+				BCFE74AB8778DC8EC0F9834C /* [CP] Check Pods Manifest.lock */,
+				942FC9DF26C2D66400536375 /* Sources */,
+				942FC9E026C2D66400536375 /* Frameworks */,
+				942FC9E126C2D66400536375 /* Resources */,
+				942FCA1D26C2D66600536375 /* Embed Watch Content */,
+				6E7A1D56FF4196869ED1BA07 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				942FC9F526C2D66500536375 /* PBXTargetDependency */,
+			);
+			name = "MQTT App";
+			productName = "MQTT App";
+			productReference = 942FC9E326C2D66400536375 /* MQTT App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		942FC9F126C2D66500536375 /* MQTT App WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942FCA1A26C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App WatchKit App" */;
+			buildPhases = (
+				3B8B1DA700BD044910AD322B /* [CP] Check Pods Manifest.lock */,
+				942FC9F026C2D66500536375 /* Resources */,
+				942FCA1926C2D66600536375 /* Embed App Extensions */,
+				7963D5CB9D9CF715BAF328A7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				942FCA0126C2D66600536375 /* PBXTargetDependency */,
+			);
+			name = "MQTT App WatchKit App";
+			productName = "MQTT App WatchKit App";
+			productReference = 942FC9F226C2D66500536375 /* MQTT App WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		942FC9FD26C2D66600536375 /* MQTT App WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 942FCA1626C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App WatchKit Extension" */;
+			buildPhases = (
+				BBA4C451A20947F3E8CC36B6 /* [CP] Check Pods Manifest.lock */,
+				942FC9FA26C2D66600536375 /* Sources */,
+				942FC9FB26C2D66600536375 /* Frameworks */,
+				942FC9FC26C2D66600536375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MQTT App WatchKit Extension";
+			productName = "MQTT App WatchKit Extension";
+			productReference = 942FC9FE26C2D66600536375 /* MQTT App WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		942FC9DB26C2D66400536375 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					942FC9E226C2D66400536375 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					942FC9F126C2D66500536375 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					942FC9FD26C2D66600536375 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 942FC9DE26C2D66400536375 /* Build configuration list for PBXProject "MQTT App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 942FC9DA26C2D66400536375;
+			productRefGroup = 942FC9E426C2D66400536375 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				942FC9E226C2D66400536375 /* MQTT App */,
+				942FC9F126C2D66500536375 /* MQTT App WatchKit App */,
+				942FC9FD26C2D66600536375 /* MQTT App WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		942FC9E126C2D66400536375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942FC9EE26C2D66500536375 /* Preview Assets.xcassets in Resources */,
+				942FC9EB26C2D66500536375 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FC9F026C2D66500536375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942FC9F826C2D66500536375 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FC9FC26C2D66600536375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942FCA1126C2D66600536375 /* Preview Assets.xcassets in Resources */,
+				942FCA0E26C2D66600536375 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B8B1DA700BD044910AD322B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MQTT App WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E7A1D56FF4196869ED1BA07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MQTT App/Pods-MQTT App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MQTT App/Pods-MQTT App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MQTT App/Pods-MQTT App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBA4C451A20947F3E8CC36B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MQTT App WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCFE74AB8778DC8EC0F9834C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MQTT App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		942FC9DF26C2D66400536375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942FCA2426C2DF3500536375 /* WatchOSCommunication.swift in Sources */,
+				942FCA2326C2DF3500536375 /* MQTTClient.swift in Sources */,
+				942FC9E926C2D66400536375 /* ContentView.swift in Sources */,
+				942FC9E726C2D66400536375 /* MQTT_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		942FC9FA26C2D66600536375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				942FCA4026C2E35200536375 /* HealthView.swift in Sources */,
+				942FCA4326C2E35200536375 /* PhilipHueToggleView.swift in Sources */,
+				942FCA4426C2E35200536375 /* WideFindView.swift in Sources */,
+				942FCA0826C2D66600536375 /* NotificationController.swift in Sources */,
+				942FCA3026C2E26200536375 /* Connection.swift in Sources */,
+				942FCA0626C2D66600536375 /* ContentView.swift in Sources */,
+				942FCA4626C2E35200536375 /* DoorView.swift in Sources */,
+				942FCA4726C2E35200536375 /* FibaroView.swift in Sources */,
+				942FCA3226C2E26200536375 /* HealthStoreWatch.swift in Sources */,
+				942FCA3426C2E26200536375 /* IOSCommunication.swift in Sources */,
+				942FCA3526C2E26200536375 /* NotificationCreator.swift in Sources */,
+				942FCA4526C2E35200536375 /* toggleView.swift in Sources */,
+				942FCA3126C2E26200536375 /* HomeKit.swift in Sources */,
+				942FCA0C26C2D66600536375 /* ComplicationController.swift in Sources */,
+				942FCA4126C2E35200536375 /* lamp.swift in Sources */,
+				942FCA0426C2D66600536375 /* MQTT_AppApp.swift in Sources */,
+				942FCA4226C2E35200536375 /* HeartRateStatView.swift in Sources */,
+				942FCA4826C2E35200536375 /* PhilipHueView.swift in Sources */,
+				942FCA0A26C2D66600536375 /* NotificationView.swift in Sources */,
+				942FCA3326C2E26200536375 /* PhilipHueClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		942FC9F526C2D66500536375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 942FC9F126C2D66500536375 /* MQTT App WatchKit App */;
+			targetProxy = 942FC9F426C2D66500536375 /* PBXContainerItemProxy */;
+		};
+		942FCA0126C2D66600536375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 942FC9FD26C2D66600536375 /* MQTT App WatchKit Extension */;
+			targetProxy = 942FCA0026C2D66600536375 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		942FCA1426C2D66600536375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		942FCA1526C2D66600536375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		942FCA1726C2D66600536375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9133227227704E06027885C0 /* Pods-MQTT App WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "MQTT App WatchKit Extension/MQTT App WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTT App WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MQTT App WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.3;
+			};
+			name = Debug;
+		};
+		942FCA1826C2D66600536375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941618F36C450FBA4825A62D /* Pods-MQTT App WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "MQTT App WatchKit Extension/MQTT App WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTT App WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MQTT App WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.3;
+			};
+			name = Release;
+		};
+		942FCA1B26C2D66600536375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8ADB600606CCA7467AAC70 /* Pods-MQTT App WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = MQTT_App_WatchKit_Extension;
+				INFOPLIST_FILE = "MQTT App WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.3;
+			};
+			name = Debug;
+		};
+		942FCA1C26C2D66600536375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB378EA6E003D1C59669952E /* Pods-MQTT App WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				IBSC_MODULE = MQTT_App_WatchKit_Extension;
+				INFOPLIST_FILE = "MQTT App WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.3;
+			};
+			name = Release;
+		};
+		942FCA1F26C2D66600536375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A7C135E1C69195475E714A2 /* Pods-MQTT App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTT App/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MQTT App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		942FCA2026C2D66600536375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CF18F9B5B69026D5D1B2CAF /* Pods-MQTT App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTT App/Preview Content\"";
+				DEVELOPMENT_TEAM = W3354TPG3R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MQTT App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Robin.MQTT-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		942FC9DE26C2D66400536375 /* Build configuration list for PBXProject "MQTT App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942FCA1426C2D66600536375 /* Debug */,
+				942FCA1526C2D66600536375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942FCA1626C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942FCA1726C2D66600536375 /* Debug */,
+				942FCA1826C2D66600536375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942FCA1A26C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942FCA1B26C2D66600536375 /* Debug */,
+				942FCA1C26C2D66600536375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		942FCA1E26C2D66600536375 /* Build configuration list for PBXNativeTarget "MQTT App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942FCA1F26C2D66600536375 /* Debug */,
+				942FCA2026C2D66600536375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 942FC9DB26C2D66400536375 /* Project object */;
+}
