@@ -235,7 +235,6 @@ class Connection : NSObject, ObservableObject, Identifiable, FibaroObserver, Hue
             switch msg["CODE"] as! Int
             {
             case 0:
-                //print("Vi vill sätta på hue med id \(msg["NODE"])")
                 self.hue!.turnOffLight(light: node as! String )
             case 1:
                 print("vill sätta på")

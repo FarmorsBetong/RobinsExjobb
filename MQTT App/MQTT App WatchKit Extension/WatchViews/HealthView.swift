@@ -51,18 +51,9 @@ struct HealthView: View
         
         List
         {
-            
-         
-            ForEach(data, id :\.id){ currentData in
-                
-                VStack
-                {
-                    
-                    if(currentData.dataName.compare("Current Heart Rate", options: .caseInsensitive) == .orderedSame)
-                    {
                         VStack
                         {
-                            Text(currentData.dataName)
+                            Text("Current Heart Rate")
                             if heart
                             {
                                 HStack
@@ -81,15 +72,16 @@ struct HealthView: View
                                 }
                                 
                             }
-                        }
-                        NavigationLink(destination: HeartRateStatView()) {
-                            
+                            NavigationLink(destination: HeartRateStatView(hrCon: hrCon).onAppear(){
+                                store!.getWalkAvg()
+                                store!.getRestRate()
+                            }) {
+                                
+                            }
                         }
                         
-                    }
                     
-                    if(currentData.dataName.compare("Steps", options: .caseInsensitive) == .orderedSame)
-                    {
+                    
                         VStack
                         {
                             Text("Steps taken")
@@ -99,31 +91,26 @@ struct HealthView: View
                             ProgressView(value: Double(stepsCon.getSteps()), total: 10000.0).preferredColorScheme(.dark)
                             
                             Label(stepsCon.getPace(), systemImage: "speedometer").foregroundColor(.green)
+                            NavigationLink(destination: Text("test View")) {
+                                
+                            }
                         }
                         
-                        NavigationLink(destination: Text("test View")) {
-                            
-                        }
-                    }
+                        
                     
-                    if(currentData.dataName.compare("OxygenSaturation", options: .caseInsensitive) == .orderedSame)
-                    {
-                        Text("Oxygen Saturation")
-                        Text("")
-                        
-                        HStack
-                        {
-                            Text(String(oxygenCon.getOxygenLevel())).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                            Image(systemName: "percent")
-                        }
-                    }
+            VStack{
+                Text("Oxygen Saturation").padding()
+               
+                
+                HStack
+                {
+                    Text(String(oxygenCon.getOxygenLevel())).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    Image(systemName: "percent")
+                }
+            }
+                       
                     
                 }
-                
-            }
-        }
-        
-    
         
         .onAppear(){
             //Starts the function that updates the current value of State variable

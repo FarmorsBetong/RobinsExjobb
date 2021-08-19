@@ -15,10 +15,19 @@ class IOSCommunication : NSObject, WCSessionDelegate
     
     var roomLocaion : String?
     
-    override init()
+    var notification : NotificationCreator?
+    
+    var PHClient : HueClient?
+    
+    var fallNotificationTimer : Bool
+    
+    init(notification : NotificationCreator, hue : HueClient)
     {
         self.roomLocaion = "Unknown locaion"
         self.coordinateContainer = CoordsContainer()
+        self.notification = notification
+        self.fallNotificationTimer = false
+        self.PHClient = hue
         super.init()
         if WCSession.isSupported()
         {
@@ -28,6 +37,15 @@ class IOSCommunication : NSObject, WCSessionDelegate
             print(session!.activationState)
         }
     }
+    
+    //Used for sending notifications.
+    func sendLocalNotification(_ title: String = "Robins app",_ subtitle: String = "Warning", body: String){
+        if let notificationCreater = self.notification{
+            notificationCreater.createNotification(title: title, subtitle: subtitle, body: body, badge: 0)
+            //Change badge to increament
+        }
+    }
+    
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("Watch recieved msg from Phone")
@@ -50,6 +68,28 @@ class IOSCommunication : NSObject, WCSessionDelegate
                 DispatchQueue.main.async {
                     self.coordinateContainer.newLocation(location: location as! String)
                 }
+            }
+            
+            if let fall = message["FALL"]
+            {
+                
+                //Used to reset a timer to minize the events created
+                if(!fallNotificationTimer)
+                {
+                    DispatchQueue.main.async {
+                        self.sendLocalNotification(body: fall as! String)
+                        print("sätter not timer till true")
+                        self.fallNotificationTimer = true
+                        self.PHClient!.turnOnLight(light: "13")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+5) {
+                            print("sätter not timer till false")
+                            self.fallNotificationTimer = false
+                        }
+                    }
+                }
+               
+                
             }
            
             

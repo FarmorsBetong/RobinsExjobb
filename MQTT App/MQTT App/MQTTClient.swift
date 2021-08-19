@@ -114,6 +114,11 @@ class MQTTClient {
                         return WOSCom.sendMsgToWatch(message: msg)
                         //return notifyObservers(event: "entering bedroom")
                     }
+                    
+                    if(pos[2] < 250) {
+                        msg["FALL"] = "Fall detected inside the kitchen call for help"
+                        return WOSCom.sendMsgToWatch(message: msg)
+                    }
                 case (false,true):
                     //Currently in bedroom
                     if(pos[0] < -1000){
@@ -130,6 +135,10 @@ class MQTTClient {
                         return WOSCom.sendMsgToWatch(message: msg)
                         //return notifyObservers(event: "entering kitchen")
                     }
+                    if(pos[2] < 250) {
+                        msg["FALL"] = "Fall detected inside the bedroom call for help"
+                        return WOSCom.sendMsgToWatch(message: msg)
+                    }
                 case (false,false):
                     if (pos[0] > -1100){
                         if(pos[1] > 0){
@@ -145,6 +154,11 @@ class MQTTClient {
                         return WOSCom.sendMsgToWatch(message: msg)
                         //notifyObservers(event: "entering kitchen")
                         //return notifyObservers(event: "entering appartement")
+                        
+                        if(pos[2] < 250) {
+                            msg["FALL"] = "Fall detected outside the lab call for help"
+                            return WOSCom.sendMsgToWatch(message: msg)
+                        }
                     }
                 default:
                     print("somethings fucky, again... currently in kitchen and in beedrom at the same time??")

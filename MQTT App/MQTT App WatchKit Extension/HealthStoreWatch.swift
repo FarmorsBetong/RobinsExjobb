@@ -112,6 +112,8 @@ class HealthStoreWatch:  NSObject/*, HKWorkoutSessionDelegate, HKLiveWorkoutBuil
             let typesToRead = Set([
                 HKQuantityType.quantityType(forIdentifier: .heartRate)!,
                 HKQuantityType.quantityType(forIdentifier: .stepCount)!,
+                HKQuantityType.quantityType(forIdentifier: .restingHeartRate)!,
+                HKQuantityType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
                 HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
                 HKQuantityType.quantityType(forIdentifier: .respiratoryRate)!,
                 HKQuantityType.quantityType(forIdentifier: .bodyMass)!,
@@ -132,16 +134,143 @@ class HealthStoreWatch:  NSObject/*, HKWorkoutSessionDelegate, HKLiveWorkoutBuil
     
     func testFunc()
     {
-        guard let sampleType = HKObjectType.quantityType(forIdentifier: .height) else {return}
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage) else {return}
         
+        let startDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+
+            guard error == nil else {
+                print("error")
+                print(error)
+                return
+            }
+            
+            
+            guard result!.isEmpty == false else {
+                print("array empty")
+                return
+            }
+            
+            let data = result![0] as! HKQuantitySample
+        
+            
+            
+            let unit = HKUnit(from: "count/s")
+            let latestHR = data.quantity.doubleValue(for: unit)
+            
+            print("Todays Rest rate \(latestHR*60) BPM" )
+            
+    
+            
+            //updating container
+            DispatchQueue.main.async {
+                self.hrCon.recievedNewResting(heartRate: Int(latestHR*60))
+            }
+        }
+        
+    healthStore?.execute(query)
         
     }
+    
+    func getWalkAvg()
+    {
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage) else {return}
+        
+        let startDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+
+            guard error == nil else {
+                print("error")
+                print(error)
+                return
+            }
+            
+            
+            guard result!.isEmpty == false else {
+                print("array empty")
+                return
+            }
+            
+            let data = result![0] as! HKQuantitySample
+        
+            
+            
+            let unit = HKUnit(from: "count/s")
+            let latestHR = data.quantity.doubleValue(for: unit)
+            
+            //print("Todays Rest rate \(latestHR*60) BPM" )
+            
+    
+            
+            //updating container
+            DispatchQueue.main.async {
+                self.hrCon.recievedNewWalkAvg(heartRate: Int(latestHR*60))
+            }
+        }
+        
+    healthStore?.execute(query)
+    }
+    
+    func getRestRate()
+    {
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .restingHeartRate) else {return}
+        
+        let startDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+
+            guard error == nil else {
+                print("error")
+                print(error)
+                return
+            }
+            
+            
+            guard result!.isEmpty == false else {
+                print("array empty")
+                return
+            }
+            
+            let data = result![0] as! HKQuantitySample
+        
+            
+            
+            let unit = HKUnit(from: "count/s")
+            let latestHR = data.quantity.doubleValue(for: unit)
+            
+            //print("Todays Rest rate \(latestHR*60) BPM" )
+            
+    
+            
+            //updating container
+            DispatchQueue.main.async {
+                self.hrCon.recievedNewResting(heartRate: Int(latestHR*60))
+            }
+        }
+        
+    healthStore?.execute(query)
+    }
+    
     
     func getOxygenSat(){
         
         guard let sampleType = HKObjectType.quantityType(forIdentifier: .oxygenSaturation) else { return }
         
-        let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        let startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
         
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
         
@@ -314,187 +443,20 @@ class HealthStoreWatch:  NSObject/*, HKWorkoutSessionDelegate, HKLiveWorkoutBuil
             //Change badge to increament
         }
     }
-    
-    func testNotifcation()
-    {
-        if self.heartRate >= 80 && !alerting
-        {
-            print("high hr, fall increased get help")
-            sendLocalNotification(body: "YOUR HEART RATE IS HIGH GET HELP")
-            alerting = true
-            
-        }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
-            print("calling myself again")
-            self.testNotifcation()
-        }
-    }
-    
-    
-
-    // ----------------------- Workout functions ----------------------
-    /*
-    func startWorkout()
-    {
-        guard let session = session else { return }
-        guard let builder = builder else { return }
-        print("Start workout session state : \(session.state.rawValue)")
-        if session.state.rawValue == 1 && !self.workoutStarted {
-            
-            session.startActivity(with: Date())
-            builder.beginCollection(withStart: Date()){ (success, error) in
-                guard success else {
-                    print("begin collection crashed")
-                    return
-                }
-                print("Session and builder started")
-                print("Workout started")
-                self.workoutStarted = true;
-            }
-        }
-        
-        if session.state.rawValue == 3 {
-            print("resuming workout")
-            //session.resume()
-            session.prepare()
-        }
-    }*/
-    /*
-    func pauseWorkout()
-    {
-        //wrap vars
-        guard let session = session, let builder = builder else { return }
-        if session.state.rawValue != 3 && session.state.rawValue != 4
-        {
-            session.pause()
-        }
-        if session.state.rawValue == 4
-        {
-            session.resume()
-        }
-        print("Pause workout func session state value : \(session.state.rawValue)")
-        
-    }
-    
-    func endWorkout()
-    {
-        guard let session = session else { return }
-        print("ending workout")
-        session.end()
-        
-    }
-     
-     public func exitWorkout()
-     {
-         
-         self.session!.end()
-         self.builder!.endCollection(withEnd: Date())
-         { (success,error) in
-             guard success else {
-                 print("end collection did not go through")
-                 return
-             }
-             self.builder!.finishWorkout
-             { (workout, error) in
-                 guard workout != nil else
-                 {
-                     print("workout is not nil")
-                     return
-                 }
-             }
-         }
-         self.workoutStarted = false;
-     }
-     public func recoverFromCrash()
-     {
-         healthStore!.recoverActiveWorkoutSession{(session,error) in
-             guard error == nil else {
-                 print("there is an error")
-                 print(error)
-                 return
-             }
-             self.session = session!
-             
-             do {
-                 self.session = try HKWorkoutSession(healthStore: self.healthStore!, configuration: self.configuration!)
-                 self.builder = session?.associatedWorkoutBuilder()
-             } catch {
-                 // Handle failure here.
-                 return
-             }
-             guard let session = self.session else { return }
-             guard let builder = self.builder else { return }
-                     
-             builder.dataSource = HKLiveWorkoutDataSource(healthStore: self.healthStore!, workoutConfiguration: self.configuration!)
-                     
-             session.delegate = self
-             builder.delegate = self
-         }
-     }
-     
-     */
-    
-   
-    
-   
-    // ---------------------------------------------------------------------------
-    /*
-    // Event functions
-    func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
-        print("[workoutSession] Changed State: \(toState.rawValue)")
-    }
-    
-    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
-        print("[workoutSession] Encountered an error: \(error)")
-    }
-    
-    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
-        print("we got data from delegate")
-        //print(collectedTypes)
-        for type in collectedTypes {
-            
-            guard let quantityType = type as? HKQuantityType else {
-                return
-            }
-            switch quantityType {
-            case HKQuantityType.quantityType(forIdentifier: .heartRate):
-                let statistics = workoutBuilder.statistics(for: quantityType)
-                let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
-                let value = statistics!.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
-                let Value = Int(Double(round(1 * value!) / 1))
-                //print("[workoutBuilder] Heart Rate: \(stringValue)")
-                self.heartRate = Value
-            case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning):
-                let statistics = workoutBuilder.statistics(for: quantityType)
-                let distanceUnit = HKUnit.meter()
-                let valueRun = statistics!.mostRecentQuantity()?.doubleValue(for: distanceUnit)
-                let stringValue = String(Int(Double(round(1 * valueRun!) / 1)))
-                //print("[workoutBuilder] Distance walked: \(stringValue)")
-                self.distanceWalked += Int(stringValue)!
-                //print(workoutBuilder.dataSource?.typesToCollect)
-    
-            default:
-                return
-            }
-        }
-    }
-    
-    
-    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
-        // Retreive the workout event.
-        guard let workoutEventType = workoutBuilder.workoutEvents.last?.type else { return }
-        print("[workoutBuilderDidCollectEvent] Workout Builder changed event: \(workoutEventType.rawValue)")
-    }*/
 }
 
 class HeartRateContainer : ObservableObject
 {
 
     @Published var heartRate : Int
+    @Published var restingRate : Int
+    @Published var walkingAvg : Int
     
     init()
     {
         self.heartRate = 0
+        self.restingRate = 0
+        self.walkingAvg = 0
     }
     
     func getHeartRate() -> Int
@@ -502,10 +464,31 @@ class HeartRateContainer : ObservableObject
         return self.heartRate
     }
     
+    func getRestingRate() -> Int
+    {
+        return self.restingRate
+    }
+    
+    func getWalkingAvg() -> Int
+    {
+        return self.walkingAvg
+    }
+    
     func recievedNewHR(heartRate : Int)
     {
         self.heartRate = heartRate
     }
+    
+    func recievedNewResting(heartRate : Int)
+    {
+        self.restingRate = heartRate
+    }
+    
+    func recievedNewWalkAvg(heartRate : Int)
+    {
+        self.walkingAvg = heartRate
+    }
+    
 }
 
 class StepsContainer : ObservableObject

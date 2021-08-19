@@ -35,7 +35,7 @@ struct MQTT_AppApp: App {
         
         self.connection = Connection(fib: fibaro!, hue: hue!)
         
-        self.phoneCon = IOSCommunication()
+        self.phoneCon = IOSCommunication(notification: notification, hue: hue!)
         
         //motion.startAccelerometer()
         
