@@ -11,6 +11,7 @@ import SwiftUI
 struct MQTT_AppApp: App {
     
     //init references to the app
+    @Environment(\.scenePhase) var phase
     
     var wf : MQTTClient?
     var watchCon : WatchConnection?
@@ -27,7 +28,21 @@ struct MQTT_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(watch: self.watchCon!)
+        }.onChange(of: phase) { newPhase in
+            switch newPhase{
+            case .active:
+                print("App is active")
+                wf!.startMQTT()
+            case .inactive:
+                print("App is now inactive")
+                
+            case .background:
+                print("App is in background")
+                
+            @unknown default:
+                print("Some new state, dafuq is happening in thies shieeet.")
+            }
         }
     }
 }

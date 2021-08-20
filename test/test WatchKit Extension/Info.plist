@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>MQTT App WatchKit Extension</string>
+	<string>test WatchKit Extension</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,19 +27,11 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>Robin.MQTT-App.watchkitapp</string>
+			<string>Robin.test.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
-	<key>NSHealthShareUsageDescription</key>
-	<string>requesting access to share healthkit information</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>requesting access to update healthkit information</string>
-	<key>NSMotionUsageDescription</key>
-	<string>access to accelerometer</string>
-	<key>NSFallDetectionUsageDescription</key>
-	<string>Access to fall detection services</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
 </dict>

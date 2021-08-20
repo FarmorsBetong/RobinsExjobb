@@ -42,6 +42,15 @@ class MQTTClient {
         //self.con.logLevel = .debug
     }
     
+    func startMQTT()
+    {
+        // 1 = connected
+        if(self.con.connState.rawValue != 1)
+        {
+            self.con.connect()
+        }
+    }
+    
     func get_post() -> [Int]{
         return pos!
     }

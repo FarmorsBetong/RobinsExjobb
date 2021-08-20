@@ -21,6 +21,8 @@ class HueClient /*: MQTTObserver*/{
     private var usr : String
     private var url_base : String
     
+    private var alarmTicks : Int = 0
+    
     init(_ ip : String, _ usr : String = "newdeveloper"){
         self.lights = [String:Int]()
         self.ip = ip
@@ -110,6 +112,41 @@ class HueClient /*: MQTTObserver*/{
     
     func turnOffLight(light : String){
         switchLightState(light : light, onoff: false)
+    }
+    
+    func fallAlarm(node : String, onOff : Bool)
+    {
+    
+        if alarmTicks <= 6
+        {
+            if onOff
+            {
+                turnOnLight(light: node)
+                self.alarmTicks += 1
+                
+                // after 1 sec turn the lamp off
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1)
+                {
+                    self.fallAlarm(node: node, onOff: false)
+                }
+            }
+            else
+            {
+                turnOffLight(light: node)
+                self.alarmTicks += 1
+                
+                //after 1 sec turn on lamp
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1)
+                {
+                    self.fallAlarm(node: node, onOff: true)
+                }
+            }
+        }
+        else
+        {
+            self.alarmTicks = 0
+            return
+        }
     }
     
     func switchLightState(light : String, onoff : Bool){

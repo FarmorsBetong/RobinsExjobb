@@ -19,15 +19,18 @@ class IOSCommunication : NSObject, WCSessionDelegate
     
     var PHClient : HueClient?
     
+    var hs : HealthStoreWatch
+    
     var fallNotificationTimer : Bool
     
-    init(notification : NotificationCreator, hue : HueClient)
+    init(notification : NotificationCreator, hue : HueClient, hs : HealthStoreWatch)
     {
         self.roomLocaion = "Unknown locaion"
         self.coordinateContainer = CoordsContainer()
         self.notification = notification
         self.fallNotificationTimer = false
         self.PHClient = hue
+        self.hs = hs
         super.init()
         if WCSession.isSupported()
         {
@@ -78,26 +81,55 @@ class IOSCommunication : NSObject, WCSessionDelegate
                 {
                     DispatchQueue.main.async {
                         self.sendLocalNotification(body: fall as! String)
-                        print("sätter not timer till true")
+                    
                         self.fallNotificationTimer = true
-                        self.PHClient!.turnOnLight(light: "13")
                         
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+5) {
-                            print("sätter not timer till false")
+                        // 5 sec timer after fall to avoid spam notification from phone messages
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10) {
                             self.fallNotificationTimer = false
                         }
+                        
+                        self.PHClient?.fallAlarm(node: "13", onOff: true)
+                        
+                        // Create health list for phone info
+                        var listInfo = [String : Any]()
+                        
+                        var dataList = [Int]()
+                        dataList.append(self.hs.hrCon.getHeartRate())
+                        dataList.append(self.hs.oxygenCon.getOxygenLevel())
+                        dataList.append(Int(self.hs.stepCon.getPace())!)
+                        
+                        listInfo["DATA"] = dataList
+                        
+                        listInfo["LOCATION"] = self.roomLocaion
+                        
+                        self.sendMessageToPhone(msg: listInfo)
+                        
                     }
                 }
-               
-                
             }
-           
-            
         }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //
+    }
+    
+    func sendMessageToPhone(msg : [String : Any])
+    {
+        guard let session = self.session else {
+            print("session was not initialited ending send msg")
+            return
+        }
+        
+        if !(session.isReachable){
+            print("phone not reachable")
+        }
+        
+        session.sendMessage(msg, replyHandler: nil) { error in
+            print(error.localizedDescription)
+        }
+
     }
 }
 

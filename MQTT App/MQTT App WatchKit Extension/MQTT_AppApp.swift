@@ -21,8 +21,10 @@ struct MQTT_AppApp: App {
     
     var phoneCon : IOSCommunication?
     
+    //var state : StateController?
+    
     //Fall references
-    //let motion = Accelerometer()
+    let motion = Accelerometer()
     //let FDM : Falldetection?
     
     init() {
@@ -35,9 +37,10 @@ struct MQTT_AppApp: App {
         
         self.connection = Connection(fib: fibaro!, hue: hue!)
         
-        self.phoneCon = IOSCommunication(notification: notification, hue: hue!)
+        self.phoneCon = IOSCommunication(notification: notification, hue: hue!, hs: healthStore!)
         
-        //motion.startAccelerometer()
+        //self.state = StateController()
+        motion.startAccelerometer()
         
     }
     @SceneBuilder var body: some Scene {
@@ -61,6 +64,7 @@ struct MQTT_AppApp: App {
                     print("App is active")
                 case .inactive:
                     print("App is now inactive")
+                    state?.applicationDidBecomeActive?()
                     
                 case .background:
                     print("App is in background")
@@ -77,3 +81,20 @@ struct MQTT_AppApp: App {
         //WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
+/*
+
+class StateController : NSObject, WKExtensionDelegate
+{
+    var state : WKExtension?
+    
+    override init(){
+        self.state = WKExtension.shared()
+    }
+    
+    func start()
+    {
+        state
+    }
+    
+}
+*/

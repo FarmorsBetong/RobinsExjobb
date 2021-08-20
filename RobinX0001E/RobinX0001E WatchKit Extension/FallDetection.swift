@@ -71,7 +71,7 @@ class Falldetection: NSObject, CMFallDetectionDelegate
     
     func fallDetectionManager(_ fallDetectionManager: CMFallDetectionManager, didDetect event: CMFallDetectionEvent, completionHandler handler: @escaping () -> Void) {
         print("Event detected from fall detection!!!!")
-        sendLocalNotification(body: "Fall has been detected!")
+        //sendLocalNotification(body: "Fall has been detected!")
     }
 
 }

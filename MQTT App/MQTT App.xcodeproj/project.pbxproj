@@ -40,6 +40,8 @@
 		942FCA4626C2E35200536375 /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3D26C2E35200536375 /* DoorView.swift */; };
 		942FCA4726C2E35200536375 /* FibaroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3E26C2E35200536375 /* FibaroView.swift */; };
 		942FCA4826C2E35200536375 /* PhilipHueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FCA3F26C2E35200536375 /* PhilipHueView.swift */; };
+		9456C21F26CFD7C300A8326D /* FallDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9456C21E26CFD7C300A8326D /* FallDetection.swift */; };
+		9456C22126D0024900A8326D /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9456C22026D0024900A8326D /* Accelerometer.swift */; };
 		9DEBE51A2E82C49FAA56551C /* Pods_MQTT_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F088F887460A7F70430776D2 /* Pods_MQTT_App.framework */; };
 		BF32E9D40A8672853055044E /* Pods_MQTT_App_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF59BCDD7EA273FA63F7CD64 /* Pods_MQTT_App_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		942FCA3D26C2E35200536375 /* DoorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
 		942FCA3E26C2E35200536375 /* FibaroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibaroView.swift; sourceTree = "<group>"; };
 		942FCA3F26C2E35200536375 /* PhilipHueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipHueView.swift; sourceTree = "<group>"; };
+		9456C21E26CFD7C300A8326D /* FallDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FallDetection.swift; path = "../../RobinX0001E/RobinX0001E WatchKit Extension/FallDetection.swift"; sourceTree = "<group>"; };
+		9456C22026D0024900A8326D /* Accelerometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accelerometer.swift; path = "../../RobinX0001E/RobinX0001E WatchKit Extension/Accelerometer.swift"; sourceTree = "<group>"; };
 		CA8ADB600606CCA7467AAC70 /* Pods-MQTT App WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit App/Pods-MQTT App WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		F088F887460A7F70430776D2 /* Pods_MQTT_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTT_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB378EA6E003D1C59669952E /* Pods-MQTT App WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT App WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-MQTT App WatchKit App/Pods-MQTT App WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 		942FCA0226C2D66600536375 /* MQTT App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9456C22026D0024900A8326D /* Accelerometer.swift */,
+				9456C21E26CFD7C300A8326D /* FallDetection.swift */,
 				942FCA3626C2E33600536375 /* WatchViews */,
 				942FCA2A26C2E26200536375 /* Connection.swift */,
 				942FCA2C26C2E26200536375 /* HealthStoreWatch.swift */,
@@ -529,6 +535,8 @@
 				942FCA3026C2E26200536375 /* Connection.swift in Sources */,
 				942FCA0626C2D66600536375 /* ContentView.swift in Sources */,
 				942FCA4626C2E35200536375 /* DoorView.swift in Sources */,
+				9456C22126D0024900A8326D /* Accelerometer.swift in Sources */,
+				9456C21F26CFD7C300A8326D /* FallDetection.swift in Sources */,
 				942FCA4726C2E35200536375 /* FibaroView.swift in Sources */,
 				942FCA3226C2E26200536375 /* HealthStoreWatch.swift in Sources */,
 				942FCA3426C2E26200536375 /* IOSCommunication.swift in Sources */,

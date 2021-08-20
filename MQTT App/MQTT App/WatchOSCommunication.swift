@@ -16,6 +16,8 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
     
     var session : WCSession?
     
+    var alarmContainer = AlarmCon()
+    
     //var mqttObservers : [MQTTObserver]
     
     override init()
@@ -26,7 +28,7 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
             self.session = WCSession.default
             self.session?.delegate = self
             self.session?.activate()
-            print(session?.activationState)
+            print(session!.activationState)
         }
     }
     /*
@@ -36,7 +38,16 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
     
     func sendMsgToWatch(message : [String : Any])
     {
-        if !(self.session!.isReachable){
+        guard let session = self.session else {
+            print("session was not initialited ending send msg")
+            return
+        }
+        
+        print(session.isPaired)
+        print(session.isReachable)
+        
+        
+        if !(session.isReachable){
             print("Watch was not reachable returning send func")
             
             
@@ -56,10 +67,6 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
         print("Watch is reachable sending msg")
         
         
-        guard let session = self.session else {
-            print("session was not initialited ending send msg")
-            return
-        }
         
         session.sendMessage(message, replyHandler: nil) { error in
             print(error.localizedDescription)
@@ -88,10 +95,71 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
         }
         
         
-        //if let mqtt = message["MQTT"]
+        if let fallInfo = message["DATA"] as? NSArray{
+            DispatchQueue.main.async {
+                self.alarmContainer.setHR(hr: fallInfo[0] as! Int)
+                self.alarmContainer.setOxygen(oxy: fallInfo[1] as! Int)
+                self.alarmContainer.setAlarmStatus(status: true)
+            }
+            
+        }
     }
     
     
+    
+}
+
+class AlarmCon : ObservableObject {
+    @Published private var hr : Int
+    @Published private var oxygen : Int
+    @Published private var speed : Double
+    @Published private var alarmStatus : Bool
+    
+    init(){
+        hr = 0
+        oxygen = 0
+        speed = 0.0
+        alarmStatus = false
+    }
+    
+    func setHR(hr : Int)
+    {
+        self.hr = hr
+    }
+    func setOxygen(oxy : Int)
+    {
+        self.oxygen = oxy
+    }
+    
+    func setSpeed(speed : Double)
+    {
+        self.speed = speed
+    }
+    
+    func setAlarmStatus(status : Bool)
+    {
+        self.alarmStatus = status
+    }
+    
+    func getHR() -> Int
+    {
+        return self.hr
+    }
+    
+    func getOxy() -> Int
+    {
+        return self.oxygen
+    }
+    
+    func getSpeed() -> Double
+    {
+        return self.speed
+    }
+    
+    func getAlarmStatus() -> Bool
+    {
+        return self.alarmStatus
+    }
     
 }
 

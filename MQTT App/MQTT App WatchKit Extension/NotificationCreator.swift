@@ -80,4 +80,15 @@ extension NotificationCreator : UNUserNotificationCenterDelegate{
         }
     }
 }
+/*
+class AppState : ObservableObject
+{
+    @Published var pageToNavigation : String?
+    
+    init()
+    {
+     pageToNavigation = ""
+    }
+}
 
+*/
