@@ -64,7 +64,7 @@ struct MQTT_AppApp: App {
                     print("App is active")
                 case .inactive:
                     print("App is now inactive")
-                    state?.applicationDidBecomeActive?()
+                    //state?.applicationDidBecomeActive?()
                     
                 case .background:
                     print("App is in background")
