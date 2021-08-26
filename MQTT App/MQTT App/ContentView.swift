@@ -40,6 +40,11 @@ struct ContentView: View {
                 
             }
             
+            HStack{
+            Text("Message from the fallen: ")
+                Text(container.getStatus())
+            }
+            
             
             Button(action: {
                 container.setAlarmStatus(status: false)

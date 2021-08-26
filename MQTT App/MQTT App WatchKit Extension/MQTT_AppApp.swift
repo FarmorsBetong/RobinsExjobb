@@ -21,10 +21,9 @@ struct MQTT_AppApp: App {
     
     var phoneCon : IOSCommunication?
     
-    //var state : StateController?
     
     //Fall references
-    let motion = Accelerometer()
+    var motion : Accelerometer?
     //let FDM : Falldetection?
     
     init() {
@@ -39,14 +38,14 @@ struct MQTT_AppApp: App {
         
         self.phoneCon = IOSCommunication(notification: notification, hue: hue!, hs: healthStore!)
         
-        //self.state = StateController()
-        motion.startAccelerometer()
+        motion = Accelerometer(store: healthStore!, con: phoneCon!)
+        motion!.startAccelerometer()
         
     }
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(healthStore: healthStore!, connection: connection!,phoneCon: phoneCon!).onAppear(){
+                ContentView(healthStore: healthStore!, connection: connection!,phoneCon: phoneCon!,accelerometer: motion!).onAppear(){
                     print("View did load, requesting access to notifications:")
                     notification.RequestNotificationAuthorization()
                     healthStore!.requestAuthorization()
@@ -56,7 +55,7 @@ struct MQTT_AppApp: App {
                             print("Authorazation was sucessfully completed")
                         }
                     }
-                    //notification.checkNotificationSetting()
+                    
                 }
             }.onChange(of: phase){ newPhase in
                 switch newPhase{
@@ -64,13 +63,12 @@ struct MQTT_AppApp: App {
                     print("App is active")
                 case .inactive:
                     print("App is now inactive")
-                    //state?.applicationDidBecomeActive?()
                     
                 case .background:
                     print("App is in background")
                     
                 @unknown default:
-                    print("Some new state, dafuq is happening in thies shieeet.")
+                    print("Some new state, what is happening here")
                 }
                 
                 

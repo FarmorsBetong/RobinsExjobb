@@ -11,12 +11,14 @@ struct ContentView: View {
     var connection: Connection?
     var store: HealthStoreWatch?
     var phoneCon : IOSCommunication?
+    var accelerometer : Accelerometer
     
-    init(healthStore : HealthStoreWatch, connection : Connection, phoneCon : IOSCommunication) {
+    init(healthStore : HealthStoreWatch, connection : Connection, phoneCon : IOSCommunication, accelerometer : Accelerometer) {
         print("Content view init loaded")
         self.store = healthStore
         self.connection = connection
         self.phoneCon = phoneCon
+        self.accelerometer = accelerometer
     }
     
     var body: some View {
@@ -56,9 +58,9 @@ struct ContentView: View {
                 })
                 
                 NavigationLink(
-                    destination: WideFindView(phoneCon: phoneCon!),
+                    destination: WideFindView(phoneCon: phoneCon!,accelerometer: accelerometer),
                     label: {
-                        Text("WideFind")
+                        Text("FallDetection")
                         Image(systemName: "tag")
                 })
                 

@@ -94,15 +94,26 @@ class WatchConnection : NSObject, WCSessionDelegate , MQTTObserver {
             print("msg recieved: key \(key) and value: \(value)")
         }
         
-        
-        if let fallInfo = message["DATA"] as? NSArray{
-            DispatchQueue.main.async {
-                self.alarmContainer.setHR(hr: fallInfo[0] as! Int)
-                self.alarmContainer.setOxygen(oxy: fallInfo[1] as! Int)
-                self.alarmContainer.setAlarmStatus(status: true)
+        //Fall message recieved
+        if let fall = message["FALL"]
+        {
+            if let fallInfo = message["DATA"] as? NSArray{
+                DispatchQueue.main.async {
+                    self.alarmContainer.setHR(hr: fallInfo[0] as! Int)
+                    self.alarmContainer.setOxygen(oxy: fallInfo[1] as! Int)
+                    self.alarmContainer.setAlarmStatus(status: true)
+                }
             }
             
+            if let msg = message["STATUS"]
+            {
+                DispatchQueue.main.async {
+                    self.alarmContainer.setStatus(status: msg as! String)
+                    
+                }
+            }
         }
+        
     }
     
     
@@ -114,12 +125,19 @@ class AlarmCon : ObservableObject {
     @Published private var oxygen : Int
     @Published private var speed : Double
     @Published private var alarmStatus : Bool
+    @Published private var status : String
     
     init(){
         hr = 0
         oxygen = 0
         speed = 0.0
         alarmStatus = false
+        status = ""
+    }
+    
+    func setStatus(status : String)
+    {
+        self.status = status
     }
     
     func setHR(hr : Int)
@@ -139,6 +157,11 @@ class AlarmCon : ObservableObject {
     func setAlarmStatus(status : Bool)
     {
         self.alarmStatus = status
+    }
+    
+    func getStatus() -> String
+    {
+        return self.status
     }
     
     func getHR() -> Int

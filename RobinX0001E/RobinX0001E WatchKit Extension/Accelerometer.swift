@@ -14,10 +14,17 @@ class Accelerometer
     
     private let manager : CMMotionManager
     private var timer : Timer?
+    var accelerationCon : AccelerationContainer
     
-    init()
+    private var store : HealthStoreWatch
+    private var con : IOSCommunication
+    
+    init(store : HealthStoreWatch, con : IOSCommunication)
     {
         manager = CMMotionManager()
+        self.accelerationCon = AccelerationContainer()
+        self.store = store
+        self.con = con
         
     }
     
@@ -65,6 +72,7 @@ class Accelerometer
                             let accelerometerY = data.acceleration.y
                             let accelerometerZ = data.acceleration.z
                                 
+                            var totAcc = sqrt((accelerometerX * accelerometerX) + (accelerometerY * accelerometerY) + (accelerometerZ * accelerometerZ))
                             
                             if let data = self.manager.deviceMotion {
                             // Get the attitude relative to the magnetic north reference frame.
@@ -78,7 +86,36 @@ class Accelerometer
                         
                                 var totalAcceleration = sqrt((accelerationX * accelerationX) + (accelerationY * accelerationY) + (accelerationZ * accelerationZ))
                                 
-                                print("tot Acceleration : \(totalAcceleration)")
+                                //sets the value of total acceleration for the view
+                                DispatchQueue.main.async {
+                                    self.accelerationCon.setTotalAcceleration(accel: totalAcceleration)
+                                    //self.accelerationCon.setTotAcceleration(accel: totAcc)
+                                    
+                                    if(totalAcceleration > 6.0)
+                                    {
+                                        //Fall detected
+                                        self.accelerationCon.setFallDetect(fall: "Fall has occured")
+                                        
+                                        var msg = [String : Any]()
+                                        msg["FALL"] = true
+                                        
+                                        var data = [Int]()
+                                        data.append(self.store.hrCon.getHeartRate())
+                                        data.append(self.store.oxygenCon.getOxygenLevel())
+                                        data.append(Int(self.store.stepCon.getPace())!)
+                                        
+                                        msg["DATA"] = data
+                                        
+                                        self.con.sendMessageToPhone(msg: msg)
+                                        
+                                    }
+                                    /*
+                                    if(4.0 < totalAcceleration){
+                                        self.accelerationCon.sethighestAcceleration(accel: totalAcceleration)
+                                    }*/
+                                }
+                                //print("tot Acceleration : \(totalAcceleration)")
+
                             }
                         }
             })
@@ -89,4 +126,55 @@ class Accelerometer
     }
     
    
+}
+
+class AccelerationContainer : ObservableObject {
+    @Published var totalAcell : String // accelerometer x,y,z + devicemotion pith, roll, yaw and new values sqrt(x2,y2,z2)
+    @Published var totAcc : String // accelerometer x,y,z sqrt(x2,y2,z2)
+    @Published var highestAcc : String
+    @Published var fallDetected : String
+    
+    init(){
+        self.totalAcell = "0.0"
+        self.totAcc = "0.0"
+        self.highestAcc = "0.0"
+        self.fallDetected = "No fall detected"
+    }
+    
+    func setFallDetect(fall : String){
+        self.fallDetected = fall
+    }
+
+    
+    func setTotalAcceleration(accel : Double) {
+        let stringAccel : String = String(format: "%.4f",accel)
+        self.totalAcell = stringAccel
+    }
+    
+    func setTotAcceleration(accel : Double) {
+        let stringAccel : String = String(format: "%.4f",accel)
+        self.totAcc = stringAccel
+    }
+    
+    func sethighestAcceleration(accel : Double) {
+        let stringAccel : String = String(format: "%.4f",accel)
+        self.highestAcc = stringAccel
+    }
+    
+    func getHighestAccel() -> String {
+        return self.highestAcc
+    }
+    
+    func getTotAccel() -> String {
+        return totalAcell
+    }
+    func getTotAcc() -> String {
+        return self.totAcc
+    }
+    
+    func getFall() -> String
+    {
+        return self.fallDetected
+    }
+    
 }

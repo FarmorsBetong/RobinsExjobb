@@ -52,7 +52,13 @@ class HealthStoreWatch:  NSObject/*, HKWorkoutSessionDelegate, HKLiveWorkoutBuil
         super.init()
         if (HKHealthStore.isHealthDataAvailable()) {
             healthStore = HKHealthStore()
-           
+            
+            
+            //Create the running queries
+            observQueryHeartRate()
+            observQueryOxygenSaturation()
+            startStepUpdate()
+            
             /*
             //Workout
             configuration!.activityType = .running

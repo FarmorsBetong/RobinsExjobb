@@ -13,7 +13,7 @@ class IOSCommunication : NSObject, WCSessionDelegate
     var session : WCSession?
     var coordinateContainer : CoordsContainer
     
-    var roomLocaion : String?
+    var roomLocation : String?
     
     var notification : NotificationCreator?
     
@@ -25,7 +25,7 @@ class IOSCommunication : NSObject, WCSessionDelegate
     
     init(notification : NotificationCreator, hue : HueClient, hs : HealthStoreWatch)
     {
-        self.roomLocaion = "Unknown locaion"
+        self.roomLocation = "Unknown location"
         self.coordinateContainer = CoordsContainer()
         self.notification = notification
         self.fallNotificationTimer = false
@@ -76,7 +76,7 @@ class IOSCommunication : NSObject, WCSessionDelegate
             if let fall = message["FALL"]
             {
                 
-                //Used to reset a timer to minize the events created
+                //Used to reset a timer to minimize the events created
                 if(!fallNotificationTimer)
                 {
                     DispatchQueue.main.async {
@@ -94,6 +94,8 @@ class IOSCommunication : NSObject, WCSessionDelegate
                         // Create health list for phone info
                         var listInfo = [String : Any]()
                         
+                        listInfo["FALL"] = true
+                        
                         var dataList = [Int]()
                         dataList.append(self.hs.hrCon.getHeartRate())
                         dataList.append(self.hs.oxygenCon.getOxygenLevel())
@@ -101,7 +103,7 @@ class IOSCommunication : NSObject, WCSessionDelegate
                         
                         listInfo["DATA"] = dataList
                         
-                        listInfo["LOCATION"] = self.roomLocaion
+                        listInfo["LOCATION"] = self.roomLocation
                         
                         self.sendMessageToPhone(msg: listInfo)
                         
@@ -153,7 +155,7 @@ class CoordsContainer : ObservableObject {
         self.roomLocation = location
     }
     
-    func getLocaion() -> String
+    func getLocation() -> String
     {
         return self.roomLocation
     }

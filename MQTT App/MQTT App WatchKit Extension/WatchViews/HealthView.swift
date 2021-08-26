@@ -39,12 +39,6 @@ struct HealthView: View
         self.hrCon = store!.hrCon
         self.stepsCon = store!.stepCon
         self.oxygenCon = store!.oxygenCon
-    
-        
-        //Create the running queries
-        store!.observQueryHeartRate()
-        store!.observQueryOxygenSaturation()
-        store!.startStepUpdate()
     }
     
     var body: some View {
